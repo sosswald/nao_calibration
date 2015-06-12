@@ -16,7 +16,7 @@
 #include "MeasurementEdge.h"
 
 #define SQRT_2_PI 2.506628275
-
+using namespace Eigen;
 namespace kinematic_calibration {
 
 typedef Matrix<double, 5, 1> Vector5d;
