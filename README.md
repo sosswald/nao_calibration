@@ -76,7 +76,7 @@ Also, these topics need to be published:
 
 ### Running the actual calibration:
 ```
-rosrun kinematic_calibration upateNode
+rosrun kinematic_calibration updateNode
 roslaunch kinematic_calibration dataCaptureService.launch
 roslaunch kinematic_calibration calibrate_nao.launch
 ```
