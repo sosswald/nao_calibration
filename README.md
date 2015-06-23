@@ -58,11 +58,14 @@ Before running, you have to edit some lines in files.
 2) You have to give your robot's ip, name and port in some launch files. So,
    + nao_basic.launch file, edit following lines:
 	arg name="nao_ip" default="$(optenv NAO_IP 192.168.1.132)"
+
 	arg name="nao_port" default="$(optenv NAO_PORT 9559)" 
    + calibrate_nao.launch:
 
 	arg name="robot_name" default="wall-e"
+
 	arg name="nao_ip" default="$(optenv NAO_IP 192.168.1.132)"
+
 	arg name="nao_port" default="$(optenv NAO_PORT 9559)"
 
    + data_capturing.launch:
