@@ -232,8 +232,8 @@ int kc_cvFindChessboardCorners(const void* arr, CvSize pattern_size,
 				img = norm_img;
 			}
 			//cvGetImage(img, &_img);
-			//cv::Mat img2=img;
-			//cv::imwrite( "/home/catkin_ws/a.jpeg", img2); //Save the resulting image on jpg file
+			cv::Mat img2=img;
+			cv::imwrite( "/home/catkin_ws/a.jpeg", img2); //Save the resulting image on jpg file
 
 		}
 

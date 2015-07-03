@@ -99,8 +99,6 @@ void resultCb(const calibrationResultConstPtr& msg) {
 	urdfUpdate.updateCameraDeltaTransform(transform);
 	urdfUpdate.writeToFile(urdfFilename);
 
-
-	ROS_INFO("No transformation found from %s to %s!", markerTransformsFilename.c_str());
 	// print the marker transformation on the screen and as parameters in a file
 	// TODO: move into own class?
 	// TODO: also update urdf...

@@ -266,7 +266,6 @@ bool G2oOptimizationInterface::optimize(const CalibrationState & state) {
     if (! cameraModel.initialized())
     {
         ROS_ERROR("Camera Model is not initialized! Quitting.");
-	ROS_INFO("I found it finally");
         throw std::runtime_error("Camera model not initialized in ValidatioNode::optimize()");
     }
 

@@ -800,8 +800,8 @@ void DataCapture::moveArmDown() {
     trajectoryClient.sendGoal(goal);
     trajectoryClient.waitForResult();
 
-    ROS_INFO("Stiffness: %f", 0.0);
-    setStiffness(goal.trajectory.joint_names, 0.0);
+    ROS_INFO("Stiffness: %f", 0);
+    setStiffness(goal.trajectory.joint_names, 0);
 }
 
 bool DataCapture::getMeasurementData(const std::string & poseName, measurementData & data){
