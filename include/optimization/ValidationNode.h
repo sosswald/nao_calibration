@@ -277,7 +277,7 @@ private:
 
     //vector<measurementData> optimizationData, validataionData, measurementsPool;
 	vector<string> optimizationDataIds;
-    //image_geometry::PinholeCameraModel cameraModel;
+    image_geometry::PinholeCameraModel cameraModel;
     //KinematicCalibrationState result;
     //vector<KinematicChain> kinematicChains;
 

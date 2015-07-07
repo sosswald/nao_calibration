@@ -189,7 +189,7 @@ void OnlineCalibration::selectAndOptimize(boost::shared_ptr<PoseSelectionStrateg
     // (but only if new observations are available and a minimum number of poses have been observed)
     if (newObservedPoses > 0  && minimumNumberOfPosesReached() )
     {
-	//ROS_INFO("Im heree");
+	ROS_INFO("Im heree");
         if(!optimize()) // optimize() also sets the new state	
             ROS_ERROR("Could not optimize selected poses!"); // not fatal because we can continue trying with more poses
         ROS_INFO("Optimization took %f s for %d poses", (ros::Time::now() - t0).toSec(), m_resultSet->getNumberOfPoses());

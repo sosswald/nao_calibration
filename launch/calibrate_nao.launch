@@ -1,7 +1,7 @@
 <launch>
    <env name="PYTHONPATH" value="$(env PYTHONPATH)" /> 
-   <arg name="robot_name" default="ra" />
-   <arg name="nao_ip" default="$(optenv NAO_IP 127.0.0.1)" />
+   <arg name="robot_name" default="wall-e" />
+   <arg name="nao_ip" default="$(optenv NAO_IP 192.168.1.132)" />
    <arg name="nao_port" default="$(optenv NAO_PORT 9559)" />
 
    <!--

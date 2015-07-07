@@ -1,7 +1,10 @@
 <launch>
    <env name="PYTHONPATH" value="$(env PYTHONPATH)" /> 
-  <arg name="nao_ip" default="$(optenv NAO_IP 127.0.0.1)" />
+  <arg name="nao_ip" default="$(optenv NAO_IP 192.168.1.132)" />
   <arg name="nao_port" default="$(optenv NAO_PORT 9559)" />
+
+  <!-- nao controller -->
+  <node pkg="nao_driver" type="nao_controller.py" name="pose_controller" required="true" args="--pip=$(arg nao_ip) --pport=$(arg nao_port)" output="screen" />
 
   <!-- joint states publisher -->
   <node pkg="naoqi_driver" type="naoqi_joint_states.py" name="naoqi_joint_states" required="true" args="--pip=$(arg nao_ip) --pport=$(arg nao_port)" />
@@ -11,8 +14,7 @@
      <arg name="nao_ip" value="$(arg nao_ip)" />
   </include>
 
-  <!-- nao controller -->
-  <node pkg="nao_driver" type="nao_controller.py" name="pose_controller" required="true" args="--pip=$(arg nao_ip) --pport=$(arg nao_port)" output="screen" />
+
 
   <!-- robot state publisher -->
   <include file="$(find nao_description)/launch/nao_v4_publisher.launch" >

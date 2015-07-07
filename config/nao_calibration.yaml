@@ -1,7 +1,7 @@
-pose_files: ['/tmp/poses_larm_750.yaml',
-'/tmp/poses_rarm_750.yaml'] # list of pose files 
+pose_files: ['/home/kurt/catkin_ws/src/nao_calibration-master/config/poses_larm_750.yaml',
+'/home/kurt/catkin_ws/src/nao_calibration-master/config/poses_rarm_750.yaml'] # list of pose files 
 init_camera_from_file: true # init camera from a file or camera info msg?
-camera_file_location: /tmp/camera.yaml #initial camera calibration parameters
+camera_file_location: /home/kurt/catkin_ws/src/nao_calibration-master/config/camera.yaml #initial camera calibration parameters
 camera_tf_frame: "CameraBottom_frame" # tf frame name of the camera
 chains: ['larm', 'rarm'] # kinematic chains to consider in calibration
 chain_names: ['larm', 'rarm'] # same as above, TODO: unify
@@ -15,7 +15,7 @@ minimum_number_of_poses: 14 # minimum: 21 for whole body, 13 for both arms  # st
 detmax_iterations: 2 # internal iterations (for the detmax algorithm)
 
 
-# degrees of freemdom for the individual chains, TODO: Automate this using kdl
+# degrees of freedom for the individual chains, TODO: Automate this using kdl
 dofs:
     larm: 4
     rarm: 4

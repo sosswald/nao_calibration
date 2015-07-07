@@ -263,12 +263,13 @@ bool G2oOptimizationInterface::optimizeRobust(const CalibrationState & state) {
 }
 
 bool G2oOptimizationInterface::optimize(const CalibrationState & state) {
-    if (! cameraModel.initialized())
+    /*if (! cameraModel.initialized())
     {
         ROS_ERROR("Camera Model is not initialized! Quitting.");
 	ROS_INFO("I found it finally");
-        throw std::runtime_error("Camera model not initialized in ValidatioNode::optimize()");
-    }
+	//ROS_INFO("%s", state.cameraInfo);
+        throw std::runtime_error("Camera model not initialized in ValidatioNode::optimize() and Im in function G2oOptimizationInterface::optimize");
+    }*/
 
     // instantiate the frame image converter
     FrameImageConverter frameImageConverter(cameraModel);
@@ -338,7 +339,7 @@ bool G2oOptimizationInterface::optimize(const CalibrationState & state) {
 
     // get intermdiate states
     //ROS_INFO("Getting intermediate States");
-    //optimization.getIntermediateStates(intermediateStates);
+   /* optimization.getIntermediateStates(intermediateStates);
 
     // TODO: Compute covariance somehow and return result for covariance in sweet spot
     /*
@@ -378,8 +379,8 @@ bool G2oOptimizationInterface::optimize(const CalibrationState & state) {
         }
         cout << " prod: " << prod << " maxi " << maxi ;
         cout << endl;
-    }
-    */
+    }*/
+    
 }
 
 

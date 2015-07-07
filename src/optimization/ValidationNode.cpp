@@ -270,22 +270,23 @@ void ValidationNode::modifyData() {
 
 
 bool ValidationNode::optimize(const CalibrationState & state) {
-	ROS_INFO("Im hereee");
+	ROS_INFO("Im berlo");
+ ROS_INFO("Im merlo");
     /*
     if (! cameraModel.initialized())
     {
         ROS_ERROR("Camera Model is not initialized! Quitting.");
         throw std::runtime_error("Camera model not initialized in ValidatioNode::optimize()");
-    }
+    }*/
 
 	// instantiate the frame image converter
     FrameImageConverter frameImageConverter(cameraModel);
-
+ ROS_INFO("Im derlo");
     // new
     frameImageConverter.getCameraModel().fromCameraInfo(state.cameraInfo);
-
+ ROS_INFO("Im cerlo");
     // initial state
-    KinematicCalibrationState initialState = state;
+    CalibrationState initialState = state;
 
 
 
@@ -333,16 +334,16 @@ bool ValidationNode::optimize(const CalibrationState & state) {
             return optimize(initialState);
         }
     }
-    */
+    
 
     if(m_modifyData)
         modifyData();
 
 
-    bool success =   G2oOptimizationInterface::optimize(state);
+    bool success =  true;// G2oOptimizationInterface::optimize(state);
 
 	// get intermdiate states
-    ROS_INFO("Getting intermediate States");
+    /*ROS_INFO("Getting intermediate States");
     m_optimization->getIntermediateStates(intermediateStates);
 
     // TODO: Compute covariance somehow and return result for covariance in sweet spot

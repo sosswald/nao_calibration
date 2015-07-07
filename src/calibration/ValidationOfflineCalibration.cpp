@@ -263,6 +263,7 @@ void ValidationOfflineCalibration::initOptimization()
 
 bool ValidationOfflineCalibration::optimize()
 {
+	ROS_INFO("enough");
     // get ValidationNode pointer
     boost::shared_ptr<ValidationNode> validationNode = boost::static_pointer_cast<ValidationNode>(m_optimizationInterface); // TODO: This is a bit ugly
 

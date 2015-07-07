@@ -1,267 +1,3 @@
-larm001-1400834744:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.22238802909851074, 0.25153398513793945, 1.0354080200195312, 0.07205605506896973,
-    -0.5952339172363281, -1.4005000591278076, 0.07972598075866699]
-  time_from_start: 1.0
-larm002-1400834748:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.6595780849456787, -0.3497939109802246, 0.3512439727783203, 0.6549761295318604,
-    -0.29917192459106445, -1.3882280588150024, -0.06907200813293457]
-  time_from_start: 1.0
-larm003-1400834751:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.6319661140441895, -0.2255399227142334, 0.8298521041870117, -0.042994022369384766,
-    -1.2901358604431152, -1.4173741340637207, 0.5399260520935059]
-  time_from_start: 1.0
-larm004-1400834755:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.8758721351623535, -0.31911396980285645, 0.6258301734924316, 0.8712701797485352,
-    -0.8529460430145264, -1.2992560863494873, 0.0827939510345459]
-  time_from_start: 1.0
-larm005-1400834758:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.8728041648864746, -0.4157559871673584, 0.6457719802856445, 0.6503739356994629,
-    -0.9925398826599121, -1.2501680850982666, 0.06131792068481445]
-  time_from_start: 1.0
-larm006-1400834761:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.7163360118865967, 0.1518239974975586, 0.8267841339111328, 0.5966839790344238,
-    -0.047595977783203125, -1.328402042388916, -0.5323400497436523]
-  time_from_start: 1.0
-larm007-1400834765:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.3128941059112549, 0.11194015294313431, 0.7055981159210205, 0.19017410278320312,
-    -0.3988819122314453, -1.047680139541626, 0.06131792068481445]
-  time_from_start: 1.0
-larm008-1400834768:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.7393460273742676, -0.16264605522155762, -0.3099100589752197, 1.1335840225219727,
-    0.6979279518127441, -1.440384030342102, -0.29610395431518555]
-  time_from_start: 1.0
-larm009-1400834772:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.6902580261230469, 0.21011614799499512, 1.124380111694336, 0.19631004333496094,
-    -0.8023240566253662, -1.4679961204528809, 0.06592011451721191]
-  time_from_start: 1.0
-larm010-1400834777:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.11040592193603516, -0.09975194931030273, 0.2592041492462158, 0.07052206993103027,
-    0.0060939788818359375, -0.931096076965332, -0.4065520763397217]
-  time_from_start: 1.0
-larm011-1400834780:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.4264099597930908, -0.35132789611816406, 0.6902580261230469, 0.37885594367980957,
-    -1.1137261390686035, -1.0630199909210205, 0.3941960334777832]
-  time_from_start: 1.0
-larm014-1400834814:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.3880600929260254, 0.07665801048278809, 0.8129780292510986, 0.5291881561279297,
-    -0.17798590660095215, -1.251702070236206, -0.2807638645172119]
-  time_from_start: 1.0
-larm015-1400834818:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.4724299907684326, -0.3206479549407959, 0.2668740749359131, 0.704064130783081,
-    -0.297637939453125, -1.3007900714874268, 0.09353208541870117]
-  time_from_start: 1.0
-larm016-1400834822:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.39879798889160156, 0.07972598075866699, 1.1182441711425781, 0.07359004020690918,
-    -0.8698201179504395, -1.3053920269012451, 0.19017410278320312]
-  time_from_start: 1.0
-larm017-1400834826:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.3849921226501465, 0.14108610153198242, 1.1259140968322754, 0.07819199562072754,
-    -0.8621501922607422, -1.333004117012024, -0.16418004035949707]
-  time_from_start: 1.0
-larm018-1400834829:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.7531521320343018, -0.35439586639404297, 0.6273641586303711, 0.6764521598815918,
-    -1.1183280944824219, -1.3422080278396606, 0.29755401611328125]
-  time_from_start: 1.0
-larm019-1400834833:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.6227619647979736, -0.45717406272888184, 0.6273641586303711, 0.3573801517486572,
-    -1.129065990447998, -1.3222661018371582, 0.10120201110839844]
-  time_from_start: 1.0
-larm020-1400834837:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.6227619647979736, 0.07512402534484863, 1.047680139541626, 0.5153820514678955,
-    -0.7455658912658691, -1.213352084159851, 0.16409611701965332]
-  time_from_start: 1.0
-larm021-1400834844:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.23466014862060547, -0.32831788063049316, 0.22852396965026855, -0.0031099319458007812,
-    -0.584496021270752, -1.2256240844726562, 0.26534008979797363]
-  time_from_start: 1.0
-larm022-1400834848:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.5153820514678955, 0.17023205757141113, 1.067622184753418, 0.5245859622955322,
-    -0.6305160522460938, -1.2102841138839722, -0.17798590660095215]
-  time_from_start: 1.0
-larm023-1400834852:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.47396397590637207, -0.34519195556640625, 0.3972640037536621, 0.029103994369506836,
-    -0.6443219184875488, -1.1903420686721802, -0.10588788986206055]
-  time_from_start: 1.0
-larm024-1400834857:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.6595780849456787, -0.4126880168914795, -0.018450021743774414, 0.4049339294433594,
-    0.1058039665222168, -1.2348281145095825, -0.48938798904418945]
-  time_from_start: 1.0
-larm025-1400834860:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.7746281623840332, -0.45717406272888184, 0.6089560985565186, 0.21165013313293457,
-    -1.0953178405761719, -1.3728880882263184, -0.1104898527264595]
-  time_from_start: 1.0
-larm026-1400834865:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.7500841617584229, -0.45717406272888184, 0.09199810028076172, 0.6074221134185791,
-    -0.18719005584716797, -1.5032780170440674, -0.39427995681762695]
-  time_from_start: 1.0
-larm027-1400834868:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.4233419895172119, -0.41115403175354004, -0.36513400077819824, 0.056715965270996094,
-    0.34357404708862305, -1.2056820392608643, -0.5323400497436523]
-  time_from_start: 1.0
-larm028-1400834872:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.3052239418029785, -0.40041589736938477, 0.2607381343841553, 0.38959407806396484,
-    -0.6213119029998779, -0.9587080478668213, 0.4862360954284668]
-  time_from_start: 1.0
-larm029-1400834878:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.0827939510345459, -0.43723201751708984, 0.14108610153198242, 0.03523993492126465,
-    -0.5906319618225098, -1.1197781562805176, 0.21932005882263184]
-  time_from_start: 1.0
-larm030-1400834882:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.4632260799407959, -0.14423799514770508, 0.8267841339111328, 0.04597806930541992,
-    -1.0631041526794434, -1.3069260120391846, 0.6074221134185791]
-  time_from_start: 1.0
-larm031-1400834889:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.63043212890625, -0.0031099319458007812, 0.9464361667633057, 0.2730100154876709,
-    -1.0063457489013672, -1.2409640550613403, 0.5291881561279297]
-  time_from_start: 1.0
-larm032-1400834895:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.42487597465515137, 0.05364799499511719, 1.030806064605713, 0.3190300464630127,
-    -1.0677061080932617, -1.2394300699234009, 0.7761621475219727]
-  time_from_start: 1.0
-larm033-1400834899:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.2070479393005371, -0.5522818565368652, -0.08748006820678711, -0.07060599327087402,
-    -0.39427995681762695, -1.0983021259307861, -0.1764519214630127]
-  time_from_start: 1.0
-larm034-1400834903:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.18710613250732422, -0.28690004348754883, 0.5322561264038086, -0.07060599327087402,
-    -0.8790240287780762, -1.271644115447998, 0.33743810653686523]
-  time_from_start: 1.0
-larm035-1400834907:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.47856616973876953, -0.029187917709350586, 0.8927459716796875, 0.11040592193603516,
-    -1.1612801551818848, -1.271644115447998, 0.5521979331970215]
-  time_from_start: 1.0
-larm036-1400834913:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.5276541709899902, -0.23934602737426758, 0.12114405632019043, 0.6273641586303711,
-    0.4340801239013672, -1.3805580139160156, -0.5630199909210205]
-  time_from_start: 1.0
-larm037-1400834916:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.420274019241333, -0.3114440441131592, 0.36351609230041504, 0.5215179920196533,
-    -0.6274480819702148, -1.3176640272140503, 0.09353208541870117]
-  time_from_start: 1.0
-larm038-1400834920:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.6012859344482422, -0.3114440441131592, 0.12421202659606934, 0.8528621196746826,
-    -0.08287787437438965, -1.2670420408248901, -0.11969398707151413]
-  time_from_start: 1.0
-larm039-1400834924:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.44788599014282227, 0.007627964019775391, 1.0231361389160156, 0.14568805694580078,
-    -0.6872739791870117, -1.3007900714874268, -0.2316758632659912]
-  time_from_start: 1.0
-larm040-1400834928:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.44788599014282227, -0.27309393882751465, 0.40186595916748047, 0.4985079765319824,
-    -0.3114440441131592, -1.158128023147583, 0.015298128128051758]
-  time_from_start: 1.0
-larm041-1400834932:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.17176604270935059, -0.34212398529052734, -0.41115403175354004, 0.1548919677734375,
-    0.5583341121673584, -1.478734016418457, -0.7624399662017822]
-  time_from_start: 1.0
-larm042-1400834936:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.2622721195220947, -0.39121198654174805, -0.38507604598999023, 0.019900083541870117,
-    0.2530679702758789, -1.313062071800232, -0.8191978931427002]
-  time_from_start: 1.0
-larm043-1400834939:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.6718499660491943, -0.24241399765014648, 0.8053081035614014, 0.03063797950744629,
-    -1.1812219619750977, -1.3820921182632446, 0.7148020267486572]
-  time_from_start: 1.0
-larm044-1400834942:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.6718499660491943, -0.24241399765014648, 0.914222002029419, 0.46476006507873535,
-    -1.188891887664795, -1.294654130935669, -0.047595977783203125]
-  time_from_start: 1.0
-larm045-1400834947:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.8344540596008301, -0.40041589736938477, 0.8160459995269775, 0.36351609230041504,
-    -1.3699040412902832, -1.3191981315612793, 0.03984212875366211]
-  time_from_start: 1.0
-larm046-1400834951:
-  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
-    LWristYaw]
-  positions: [0.8344540596008301, -0.4249598979949951, 0.32056403160095215, 0.7884340286254883,
-    -0.3958139419555664, -1.1565940380096436, -0.19792795181274414]
-  time_from_start: 1.0
 larm047-1400834959:
   joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll,
     LWristYaw]
@@ -4498,3 +4234,805 @@ larm980-1400847416:
   positions: [0.38959407806396484, -0.03992605209350586, 0.6580440998077393, 0.12114405632019043,
     -0.26695799827575684, -1.4618600606918335, -0.447969913482666]
   time_from_start: 1.0
+larm987-1400847437:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [0.82525,-0.090548,0.550664,0.575208,-0.398882,-1.21028,-0.490922]
+  time_from_start: 1.0
+larm988-1400847440:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.82525, -0.090548, 0.550664, 0.575208, -0.408086, -1.21028, -0.490922]
+  time_from_start: 1.0
+larm989-1400847443:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.826784, -0.090548, 0.550664, 0.576742, -0.414222, -1.21028, -0.492456]
+  time_from_start: 1.0
+larm990-1400847446:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.82525, -0.090548, 0.550664, 0.575208, -0.421892, -1.21028, -0.492456]
+  time_from_start: 1.0
+larm991-1400847449:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.82525, -0.090548, 0.558334, 0.575208, -0.391212, -1.21028, -0.487854]
+  time_from_start: 1.0
+larm992-1400847452:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.826784, -0.090548, 0.561402, 0.576742, -0.38661, -1.21028, -0.48632]
+  time_from_start: 1.0
+larm993-1400847455:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.82525, -0.090548, 0.493906, 0.576742, -0.43263, -1.21028, -0.428028]
+  time_from_start: 1.0
+larm994-1400847458:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.82525, -0.090548, 0.398798, 0.576742, -0.474048, -1.21028, -0.428028]
+  time_from_start: 1.0
+larm995-1400847461:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.82525, -0.090548, 0.423342, 0.575208, -0.395814, -1.20722, -0.428028]
+  time_from_start: 1.0
+larm996-1400847464:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.82525, -0.090548, 0.444818, 0.576742, -0.380474, -1.20722, -0.429562]
+  time_from_start: 1.0
+larm997-1400847467:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.826784, -0.090548, 0.374254, 0.573674, -0.37894, -1.20722, -0.428028]
+  time_from_start: 1.0
+
+
+larm998-1400847470:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.82525, -0.090548, 0.248466, 0.57214, -0.3636, -1.20722, -0.429562]
+  time_from_start: 1.0
+
+
+larm999-1400847473:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.82525, -0.090548, 0.240796, 0.573674, -0.337522, -1.20722, -0.429562]
+  time_from_start: 1.0
+
+
+larm1000-1400847476:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.82525, -0.090548, 0.222388, 0.575208, -0.33292, -1.20722, -0.428028]
+  time_from_start: 1.0
+larm1001-1400847479:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.826784, -0.090548, 0.245398, 0.592082, -0.17185, -1.19188, -0.428028]
+  time_from_start: 1.0
+larm1002-1400847482:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.82525, -0.090548, 0.266874, 0.60282, -0.127364, -1.19188, -0.428028]
+  time_from_start: 1.0
+larm1003-1400847485:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.826784, -0.092082, 0.222388, 0.496974, -0.142704, -1.19341, -0.429562]
+  time_from_start: 1.0
+larm1004-1400847488:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.82525, -0.090548, 0.214718, 0.391128, -0.11816, -1.19341, -0.429562]
+  time_from_start: 1.0
+larm1005-1400847491:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.82525, -0.090548, 0.214718, 0.414138, -0.136568, -1.19341, -0.429562]
+  time_from_start: 1.0
+larm1006-1400847494:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.826784, -0.090548, 0.213184, 0.412604, -0.147306, -1.19188, -0.429562]
+  time_from_start: 1.0
+larm1007-1400847497:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.722472, -0.092082, 0.213184, 0.412604, -0.147306, -1.19188, -0.429562]
+  time_from_start: 1.0
+larm1008-1400847500:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.604354, -0.090548, 0.213184, 0.392662, -0.145772, -1.19341, -0.428028]
+  time_from_start: 1.0
+larm1009-1400847503:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.532256, -0.092082, 0.213184, 0.34204, -0.14117, -1.19341, -0.429562]
+  time_from_start: 1.0
+larm1010-1400847506:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.431012, -0.092082, 0.210116, 0.254602, -0.14117, -1.19341, -0.429562]
+  time_from_start: 1.0
+larm1011-1400847509:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.332836, -0.092082, 0.202446, 0.185572, -0.135034, -1.19341, -0.429562]
+  time_from_start: 1.0
+larm1012-1400847512:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.279146, -0.092082, 0.19631, 0.145688, -0.108956, -1.19341, -0.429562]
+  time_from_start: 1.0
+larm1013-1400847515:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.279146, -0.092082, 0.197844, 0.13495, -0.101286, -1.19341, -0.431096]
+  time_from_start: 1.0
+larm1014-1400847518:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.279146, -0.092082, 0.197844, 0.13495, -0.136568, -1.19341, -0.622846]
+  time_from_start: 1.0
+larm1015-1400847521:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.279146, -0.092082, 0.197844, 0.144154, -0.139636, -1.19341, -0.481718]
+  time_from_start: 1.0
+larm1016-1400847524:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.279146, -0.092082, 0.197844, 0.176368, -0.128898, -1.19341, -0.242414]
+  time_from_start: 1.0
+larm1017-1400847527:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.28068, -0.092082, 0.200912, 0.193242, -0.1335, -1.19341, -0.20253]
+  time_from_start: 1.0
+larm1018-1400847530:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.279146, -0.092082, 0.21165, 0.193242, -0.1335, -1.19341, -0.20253]
+  time_from_start: 1.0
+larm1019-1400847533:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.297554, -0.098218, 0.21165, 0.161028, -0.161112, -1.15046, -0.200996]
+  time_from_start: 1.0
+larm1020-1400847536:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.315962, -0.0997519, 0.194776, 0.029104, -0.190258, -0.977116, -0.20253]
+  time_from_start: 1.0
+larm1021-1400847539:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.315962, -0.101286, 0.193242, -0.01845, -0.188724, -0.920358, -0.20253]
+  time_from_start: 1.0
+larm1022-1400847542:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.315962, -0.0997519, 0.194776, -0.00924587, -0.17185, -0.921892, -0.20253]
+  time_from_start: 1.0
+larm1023-1400847545:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.315962, -0.0997519, 0.159494, 0.0183661, -0.154976, -0.921892, -0.20253]
+  time_from_start: 1.0
+larm1024-1400847548:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.315962, -0.0997519, 0.139552, 0.030638, -0.107422, -0.921892, -0.20253]
+  time_from_start: 1.0
+larm1025-1400847551:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.315962, -0.0997519, 0.0889301, 0.049046, -0.0552659, -0.921892, -0.20253]
+  time_from_start: 1.0
+larm1026-1400847554:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.315962, -0.0997519, 0.055182, 0.0597839, -0.096684, -0.921892, -0.219404]
+  time_from_start: 1.0
+larm1027-1400847557:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.317496, -0.098218, 0.053648, 0.082794, -0.0874801, -0.949504, -0.220938]
+  time_from_start: 1.0
+larm1028-1400847560:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.317496, -0.09515, 0.052114, 0.0352399, -0.105888, -0.98632, -0.260822]
+  time_from_start: 1.0
+larm1029-1400847563:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.317496, -0.09515, 0.08126, 0.0168321, -0.0813439, -1.02774, -0.260822]
+  time_from_start: 1.0
+larm1030-1400847566:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.317496, -0.090548, 0.0597839, 0.00302601, -0.092082, -1.12285, -0.377406]
+  time_from_start: 1.0
+larm1031-1400847569:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.31903, -0.090548, 0.0597839, -0.00464392, -0.0752079, -1.15813, -0.377406]
+  time_from_start: 1.0
+larm1032-1400847572:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.317496, -0.0890141, 0.0597839, -0.00464392, -0.0859461, -1.17654, -0.375872]
+  time_from_start: 1.0
+larm1033-1400847575:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.317496, -0.090548, 0.0597839, -0.00464392, -0.0890141, -1.21182, -0.37894]
+  time_from_start: 1.0
+larm1034-1400847578:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.317496, -0.090548, 0.0597839, -0.00771189, -0.0890141, -1.21335, -0.377406]
+  time_from_start: 1.0
+larm1035-1400847581:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.317496, -0.090548, 0.0597839, -0.01845, -0.090548, -1.21335, -0.377406]
+  time_from_start: 1.0
+larm1036-1400847584:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.317496, -0.090548, 0.0597839, -0.0353239, -0.096684, -1.2517, -0.39428]
+  time_from_start: 1.0
+larm1037-1400847587:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.317496, -0.090548, 0.0597839, -0.0353239, -0.096684, -1.26858, -0.39428]
+  time_from_start: 1.0
+larm1038-1400847590:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.317496, -0.090548, 0.0597839, -0.0353239, -0.112024, -1.30539, -0.392746]
+  time_from_start: 1.0
+larm1039-1400847593:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.317496, -0.090548, 0.0613179, -0.0353239, -0.115092, -1.33914, -0.392746]
+  time_from_start: 1.0
+larm1040-1400847596:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.317496, -0.090548, 0.0613179, -0.0337899, -0.124296, -1.35448, -0.392746]
+  time_from_start: 1.0
+larm1041-1400847599:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.317496, -0.092082, 0.0628521, 0.00455999, -0.12583, -1.35295, -0.392746]
+  time_from_start: 1.0
+larm1042-1400847602:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.317496, -0.104354, 0.0628521, 0.12728, -0.121228, -1.34221, -0.377406]
+  time_from_start: 1.0
+larm1043-1400847605:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.320564, -0.105888, 0.079726, 0.27301, -0.0828779, -1.33761, -0.342124]
+  time_from_start: 1.0
+larm1044-1400847608:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.437148, -0.105888, 0.08126, 0.481634, -0.0322559, -1.33607, -0.33292]
+  time_from_start: 1.0
+larm1045-1400847611:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.59515, -0.105888, 0.08126, 0.58748, -0.0123138, -1.33761, -0.30991]
+  time_from_start: 1.0
+larm1046-1400847614:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.677986, -0.104354, 0.08126, 0.673384, -0.0123138, -1.33607, -0.30224]
+  time_from_start: 1.0
+larm1047-1400847617:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.74088, -0.105888, 0.08126, 0.739346, -0.0123138, -1.33761, -0.30224]
+  time_from_start: 1.0
+larm1048-1400847620:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.799172, -0.104354, 0.0858622, 0.800706, -0.0123138, -1.33761, -0.30224]
+  time_from_start: 1.0
+larm1049-1400847623:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.858998, -0.105888, 0.0858622, 0.831386, -0.0123138, -1.33761, -0.300706]
+  time_from_start: 1.0
+larm1050-1400847626:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.914222, -0.104354, 0.0858622, 0.837522, -0.0123138, -1.33607, -0.296104]
+  time_from_start: 1.0
+larm1051-1400847629:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.920358, -0.105888, 0.0858622, 0.835988, -0.0123138, -1.33607, -0.29457]
+  time_from_start: 1.0
+larm1052-1400847632:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.920358, -0.105888, 0.0858622, 0.837522, -0.0123138, -1.33761, -0.29457]
+  time_from_start: 1.0
+larm1053-1400847635:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.920358, -0.105888, 0.0858622, 0.837522, -0.0123138, -1.33607, -0.29457]
+  time_from_start: 1.0
+larm1054-1400847638:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.920358, -0.105888, 0.0858622, 0.835988, -0.0123138, -1.33761, -0.29457]
+  time_from_start: 1.0
+larm1055-1400847641:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.920358, -0.105888, 0.0873961, 0.837522, -0.0123138, -1.33607, -0.29457]
+  time_from_start: 1.0
+larm1056-1400847644:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.911154, -0.105888, 0.0858622, 0.837522, -0.0123138, -1.33761, -0.29457]
+  time_from_start: 1.0
+larm1057-1400847647:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.831386, -0.105888, 0.0873961, 0.837522, -0.0138481, -1.33607, -0.29457]
+  time_from_start: 1.0
+larm1058-1400847650:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.75622, -0.105888, 0.0858622, 0.837522, -0.0123138, -1.33607, -0.29457]
+  time_from_start: 1.0
+larm1059-1400847653:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.722472, -0.105888, 0.0858622, 0.837522, -0.0123138, -1.33607, -0.29457]
+  time_from_start: 1.0
+larm1060-1400847656:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.79457, -0.105888, 0.0858622, 0.835988, -0.0138481, -1.33607, -0.29457]
+  time_from_start: 1.0
+larm1061-1400847659:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.892746, -0.104354, 0.0873961, 0.835988, -0.0138481, -1.33761, -0.29457]
+  time_from_start: 1.0
+larm1062-1400847662:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.897348, -0.10282, 0.131882, 0.834454, -0.00771189, -1.33761, -0.273094]
+  time_from_start: 1.0
+larm1063-1400847665:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.897348, -0.098218, 0.216252, 0.831386, -0.00771189, -1.33761, -0.19486]
+  time_from_start: 1.0
+larm1064-1400847668:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.897348, -0.098218, 0.279146, 0.829852, -0.00771189, -1.33761, -0.168782]
+  time_from_start: 1.0
+larm1065-1400847671:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.897348, -0.098218, 0.292952, 0.829852, -0.130432, -1.33761, -0.167248]
+  time_from_start: 1.0
+larm1066-1400847674:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.897348, -0.098218, 0.256136, 0.823716, -0.24088, -1.33761, -0.16418]
+  time_from_start: 1.0
+larm1067-1400847677:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.897348, -0.098218, 0.256136, 0.751618, -0.250084, -1.33761, -0.16418]
+  time_from_start: 1.0
+larm1068-1400847680:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.851328, -0.0859461, 0.248466, 0.644238, -0.24855, -1.33761, -0.16418]
+  time_from_start: 1.0
+larm1069-1400847683:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.757754, -0.0859461, 0.237728, 0.561402, -0.234744, -1.33761, -0.162646]
+  time_from_start: 1.0
+larm1070-1400847686:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.682588, -0.0859461, 0.220854, 0.4801, -0.188724, -1.33761, -0.162646]
+  time_from_start: 1.0
+larm1071-1400847689:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.582878, -0.0859461, 0.213184, 0.417206, -0.154976, -1.33761, -0.162646]
+  time_from_start: 1.0
+larm1072-1400847692:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.48777, -0.0859461, 0.213184, 0.38039, -0.142704, -1.33761, -0.162646]
+  time_from_start: 1.0
+larm1073-1400847695:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.486236, -0.0859461, 0.213184, 0.36505, -0.1335, -1.33761, -0.162646]
+  time_from_start: 1.0
+larm1074-1400847698:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.519984, -0.0874801, 0.213184, 0.352778, -0.154976, -1.33607, -0.16418]
+  time_from_start: 1.0
+larm1075-1400847701:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.622762, -0.0859461, 0.213184, 0.352778, -0.15651, -1.33607, -0.16418]
+  time_from_start: 1.0
+larm1076-1400847704:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.621228, -0.0874801, 0.213184, 0.352778, -0.15651, -1.33607, -0.16418]
+  time_from_start: 1.0
+larm1077-1400847707:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.622762, -0.0874801, 0.214718, 0.352778, -0.154976, -1.33607, -0.16418]
+  time_from_start: 1.0
+larm1078-1400847710:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.622762, -0.0874801, 0.214718, 0.352778, -0.18719, -1.33607, -0.323716]
+  time_from_start: 1.0
+larm1079-1400847713:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.622762, -0.0874801, 0.216252, 0.351244, -0.185656, -1.33607, -0.357464]
+  time_from_start: 1.0
+larm1080-1400847716:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.622762, -0.0874801, 0.216252, 0.352778, -0.127364, -1.33607, -0.190258]
+  time_from_start: 1.0
+larm1081-1400847719:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.622762, -0.0874801, 0.216252, 0.360448, -0.11049, -1.33607, -0.0767419]
+  time_from_start: 1.0
+larm1082-1400847722:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.622762, -0.0874801, 0.217786, 0.358914, -0.115092, -1.33607, -0.0752079]
+  time_from_start: 1.0
+larm1083-1400847725:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.622762, -0.0874801, 0.217786, 0.37272, -0.128898, -1.33607, -0.0767419]
+  time_from_start: 1.0
+larm1084-1400847728:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.622762, -0.0874801, 0.217786, 0.375788, -0.181054, -1.33761, -0.0767419]
+  time_from_start: 1.0
+larm1085-1400847731:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.622762, -0.0874801, 0.217786, 0.377322, -0.185656, -1.33607, -0.0767419]
+  time_from_start: 1.0
+larm1086-1400847734:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.622762, -0.107422, 0.197844, 0.38806, -0.18719, -1.333, -0.0767419]
+  time_from_start: 1.0
+larm1087-1400847737:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.622762, -0.147306, 0.1733, 0.397264, -0.234744, -1.33147, -0.0767419]
+  time_from_start: 1.0
+larm1088-1400847740:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.621228, -0.150374, 0.13495, 0.423342, -0.285366, -1.33147, -0.0767419]
+  time_from_start: 1.0
+larm1089-1400847743:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.621228, -0.176452, 0.121144, 0.42641, -0.300706, -1.32994, -0.0767419]
+  time_from_start: 1.0
+larm1090-1400847746:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.621228, -0.17952, 0.121144, 0.440216, -0.207132, -1.32687, -0.0767419]
+  time_from_start: 1.0
+larm1091-1400847749:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.621228, -0.17952, 0.121144, 0.443284, -0.127364, -1.3284, -0.153442]
+  time_from_start: 1.0
+larm1092-1400847752:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.621228, -0.168782, 0.121144, 0.443284, -0.09515, -1.3284, -0.162646]
+  time_from_start: 1.0
+larm1093-1400847755:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.621228, -0.124296, 0.122678, 0.443284, -0.046062, -1.3284, -0.162646]
+  time_from_start: 1.0
+larm1094-1400847758:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.622762, -0.107422, 0.122678, 0.443284, -0.0291879, -1.3284, -0.162646]
+  time_from_start: 1.0
+larm1095-1400847761:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.62583, -0.0598679, 0.125746, 0.443284, -0.0276539, -1.3284, -0.162646]
+  time_from_start: 1.0
+larm1096-1400847764:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.62583, -0.0583339, 0.130348, 0.44175, -0.0276539, -1.3284, -0.16418]
+  time_from_start: 1.0
+larm1097-1400847767:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.62583, -0.0583339, 0.131882, 0.539926, -0.04146, -1.36215, -0.165714]
+  time_from_start: 1.0
+larm1098-1400847770:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.62583, -0.0583339, 0.13495, 0.705598, -0.04146, -1.45419, -0.165714]
+  time_from_start: 1.0
+larm1099-1400847773:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.62583, -0.0583339, 0.136484, 0.788434, -0.04146, -1.49407, -0.165714]
+  time_from_start: 1.0
+larm1100-1400847776:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.62583, -0.0583339, 0.138018, 0.862066, -0.0291879, -1.54462, -0.167248]
+  time_from_start: 1.0
+larm1101-1400847779:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.627364, -0.066004, 0.139552, 0.857464, -0.0399261, -1.54462, -0.165714]
+  time_from_start: 1.0
+larm1102-1400847782:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.635034, -0.0798099, 0.138018, 0.770026, -0.0537319, -1.52322, -0.21787]
+  time_from_start: 1.0
+larm1103-1400847785:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.642704, -0.0798099, 0.13495, 0.644238, -0.0552659, -1.4005, -0.21787]
+  time_from_start: 1.0
+larm1104-1400847788:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.647306, -0.0798099, 0.13495, 0.521518, -0.0552659, -1.27625, -0.216336]
+  time_from_start: 1.0
+larm1105-1400847791:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.651908, -0.0798099, 0.13495, 0.39573, -0.0552659, -1.15199, -0.21787]
+  time_from_start: 1.0
+larm1106-1400847794:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.658044, -0.0798099, 0.13495, 0.322098, -0.0552659, -1.07069, -0.216336]
+  time_from_start: 1.0
+larm1107-1400847797:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.659578, -0.0798099, 0.133416, 0.260738, -0.0598679, -1.0078, -0.216336]
+  time_from_start: 1.0
+larm1108-1400847800:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.72554, -0.0798099, 0.131882, 0.254602, -0.09515, -1.0078, -0.21787]
+  time_from_start: 1.0
+larm1109-1400847803:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.57214, -0.0798099, 0.133416, 0.254602, -0.098218, -1.00933, -0.21787]
+  time_from_start: 1.0
+larm1110-1400847806:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.542994, -0.0813439, 0.138018, 0.254602, -0.098218, -1.00933, -0.21787]
+  time_from_start: 1.0
+larm1111-1400847809:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.490838, -0.0798099, 0.138018, 0.240796, -0.104354, -1.00933, -0.21787]
+  time_from_start: 1.0
+larm1112-1400847812:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.398798, -0.073674, 0.138018, 0.18864, -0.11816, -1.00933, -0.211734]
+  time_from_start: 1.0
+larm1113-1400847815:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.4034, -0.066004, 0.138018, 0.159494, -0.11816, -1.00933, -0.185656]
+  time_from_start: 1.0
+larm1114-1400847818:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.4034, -0.067538, 0.138018, 0.159494, -0.11816, -1.00933, -0.185656]
+  time_from_start: 1.0
+larm1115-1400847821:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.4034, -0.067538, 0.138018, 0.159494, -0.119694, -1.00933, -0.185656]
+  time_from_start: 1.0
+larm1116-1400847824:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.4034, -0.067538, 0.191708, 0.162562, -0.107422, -1.0078, -0.222472]
+  time_from_start: 1.0
+larm1117-1400847827:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.4034, -0.066004, 0.216252, 0.162562, -0.104354, -1.0078, -0.234744]
+  time_from_start: 1.0
+larm1118-1400847830:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.4034, -0.067538, 0.217786, 0.162562, -0.104354, -1.0078, -0.25622]
+  time_from_start: 1.0
+larm1119-1400847833:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.4034, -0.067538, 0.217786, 0.162562, -0.10282, -1.01086, -0.119694]
+  time_from_start: 1.0
+larm1120-1400847836:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.4034, -0.067538, 0.217786, 0.161028, -0.104354, -1.00933, -0.0859461]
+  time_from_start: 1.0
+larm1121-1400847839:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.404934, -0.066004, 0.216252, 0.259204, -0.116626, -1.12285, -0.0844119]
+  time_from_start: 1.0
+larm1122-1400847842:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.404934, -0.066004, 0.216252, 0.383458, -0.128898, -1.29159, -0.0844119]
+  time_from_start: 1.0
+larm1123-1400847845:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.404934, -0.066004, 0.217786, 0.383458, -0.12583, -1.29159, -0.0844119]
+  time_from_start: 1.0
+larm1124-1400847848:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.406468, -0.066004, 0.217786, 0.383458, -0.124296, -1.29312, -0.0844119]
+  time_from_start: 1.0
+larm1125-1400847851:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.423342, -0.067538, 0.21932, 0.383458, -0.124296, -1.29312, -0.0844119]
+  time_from_start: 1.0
+larm1126-1400847854:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.473964, -0.069072, 0.21932, 0.383458, -0.124296, -1.29312, -0.0844119]
+  time_from_start: 1.0
+larm1127-1400847857:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.493906, -0.069072, 0.220854, 0.381924, -0.124296, -1.29312, -0.0844119]
+  time_from_start: 1.0
+larm1128-1400847860:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.493906, -0.073674, 0.223922, 0.381924, -0.121228, -1.29159, -0.0828779]
+  time_from_start: 1.0
+larm1129-1400847863:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.493906, -0.0874801, 0.231592, 0.381924, -0.121228, -1.29159, -0.0844119]
+  time_from_start: 1.0
+larm1130-1400847866:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.493906, -0.0890141, 0.231592, 0.381924, -0.131966, -1.29312, -0.0844119]
+  time_from_start: 1.0
+larm1131-1400847869:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.493906, -0.0874801, 0.233126, 0.381924, -0.131966, -1.29159, -0.0844119]
+  time_from_start: 1.0
+larm1132-1400847872:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.49544, -0.0874801, 0.23466, 0.381924, -0.130432, -1.29159, -0.0844119]
+  time_from_start: 1.0
+larm1133-1400847875:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.493906, -0.0874801, 0.236194, 0.381924, -0.124296, -1.29312, -0.0844119]
+  time_from_start: 1.0
+larm1134-1400847878:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.493906, -0.0874801, 0.245398, 0.381924, -0.115092, -1.29312, -0.0844119]
+  time_from_start: 1.0
+larm1135-1400847881:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.493906, -0.0874801, 0.263806, 0.38039, -0.115092, -1.29159, -0.0859461]
+  time_from_start: 1.0
+larm1136-1400847884:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.493906, -0.0874801, 0.263806, 0.38039, -0.14117, -1.29312, -0.0859461]
+  time_from_start: 1.0
+larm1137-1400847887:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.493906, -0.0874801, 0.263806, 0.38039, -0.147306, -1.29159, -0.0874801]
+  time_from_start: 1.0
+larm1138-1400847890:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.493906, -0.0890141, 0.263806, 0.38039, -0.182588, -1.29159, -0.0859461]
+  time_from_start: 1.0
+larm1139-1400847893:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.493906, -0.0874801, 0.263806, 0.38039, -0.185656, -1.29159, -0.174918]
+  time_from_start: 1.0
+larm1140-1400847896:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.493906, -0.0890141, 0.263806, 0.38039, -0.18719, -1.29159, -0.242414]
+  time_from_start: 1.0
+larm1141-1400847899:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.493906, -0.0874801, 0.263806, 0.38039, -0.18719, -1.29159, -0.288434]
+  time_from_start: 1.0
+larm1142-1400847902:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.493906, -0.0874801, 0.263806, 0.38039, -0.18719, -1.29159, -0.320648]
+  time_from_start: 1.0
+larm1143-1400847905:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.49544, -0.0874801, 0.269942, 0.38039, -0.18719, -1.29159, -0.337522]
+  time_from_start: 1.0
+larm1144-1400847908:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.493906, -0.0874801, 0.338972, 0.378856, -0.18719, -1.29312, -0.366668]
+  time_from_start: 1.0
+larm1145-1400847911:
+  joint_names: [HeadYaw, HeadPitch, LShoulderPitch, LShoulderRoll, LElbowYaw, LElbowRoll, 
+    LWristYaw]
+  positions: [ 0.49544, -0.0874801, 0.351244, 0.375788, -0.18719, -1.29159, -0.39428]
+  time_from_start: 1.0
+
