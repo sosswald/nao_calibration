@@ -51,25 +51,6 @@ Second, a list of possible poses is required. The poses should be such that the 
 
 Third, there are some implicit assumptions made, e.g. that you are trying to calibrate the lower of Nao's two cameras and its TF frame name is CameraBottom_frame. This assumption has been lifted in some parts of the code and the camera frame is now configurable but maybe other parts of the code still rely on this assumption. The same goes for other link and joint names. 
 
-Before running, you have to edit some lines in files.
-
-1) In config/nao_calibration.yaml, you have to give paths of following files: pose_files and camera_file_location. Give the paths according to your order in computer.
-
-2) You have to give your robot's ip, name and port in some launch files. So,
-   + nao_basic.launch file, edit following lines:
-	arg name="nao_ip" default="$(optenv NAO_IP  (robot's ip) )"
-
-	arg name="nao_port" default="$(optenv NAO_PORT 9559)" 
-   + calibrate_nao.launch:
-
-	arg name="robot_name" default="wall-e"
-
-	arg name="nao_ip" default="$(optenv NAO_IP (robot's ip))"
-
-	arg name="nao_port" default="$(optenv NAO_PORT 9559)"
-
-   + data_capturing.launch:
-	arg name="robot_ip" default="wall-e.local"
 
 ### Configuration:
 The main config file is nao_calibration.yaml.
@@ -95,12 +76,14 @@ Also, these topics need to be published:
 
 ### Running the actual calibration:
 ```
-rosrun kinematic_calibration updateNode
+rosrun kinematic_calibration upateNode
 roslaunch kinematic_calibration dataCaptureService.launch
 roslaunch kinematic_calibration calibrate_nao.launch
 ```
 
 calibrate_nao calibrates both arms of the robot. Start with that. To include the legs, adjust the launch file accordingly, as well as the config file (nao_calibration.yaml)
+If you want to calibrate legs too, first of all change corresponding launch files and change the following lines in FilePoseSource.cpp under src folder:
+string stampStr = key.substr(8); to string stampStr = key.substr(6);
 
 
 ## After calibration:
