@@ -7,7 +7,7 @@ using namespace boost;
 using namespace std;
 using namespace kinematic_calibration;
 
-/*
+
 vector<string> getActivePoseIDs(const MeasurementPoseSet & set)
 {
     vector<string> poseIds;
@@ -149,4 +149,4 @@ int main(int argc, char ** argv)
     return 0;
 
 }
-*/
+

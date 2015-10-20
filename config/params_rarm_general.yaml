@@ -1,9 +1,10 @@
 chain_name: rarm
 chain_root: HeadPitch_link
 chain_tip: r_wrist
-marker_type: checkerboard # checkerboard, aruco, circle, color
+marker_type: aruco # checkerboard, aruco, circle, color
 marker_frame: RMarker_frame
-
+aruco_markersize: 20            # optional; side length of the aruco marker in [mm]
+aruco_id: 25
 marker_transform_source: urdf   # 'tf' or 'urdf' (optional; if not set, default is 'urdf')
 
 # checkerboard specific parameters
@@ -12,4 +13,4 @@ checkerboard_columns: 4         # optional; if not set, default is 4
 checkerboard_squarelength: 7.5   # optional; side length of one square of the checkerboard in [mm]
 
 # aruco marker specific parameters
-aruco_markersize: 20            # optional; side length of the aruco marker in [mm]
+

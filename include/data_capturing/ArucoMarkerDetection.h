@@ -33,6 +33,7 @@ public:
 	void drawMarker(cv::Mat& image);
 
 	void setMarkerSize(const double& markerSize);
+	//void setMarkerId(const int& markerId);
 
 private:
 	aruco::Marker currentMarker;
@@ -41,6 +42,7 @@ private:
 	 * The side length of the aruco marker.
 	 */
 	double markerSize;
+
 };
 
 } /* namespace kinematic_calibration */

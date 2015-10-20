@@ -191,13 +191,13 @@ void PoseSelectionNode::initializeState() {
 }
 
 void PoseSelectionNode::initializeCameraFromFile() {
-  std::string filename;
+  std::string filename;     std::string projectdirectory;
   nhPrivate.param("camera_file_location", filename, filename);
   string camera_name("nao_camera");
   ROS_INFO("Setting camera from file %s", filename.c_str());
-
+  m_nhPrivate.getParam("project_directory", projectdirectory);
   boost::shared_ptr<sensor_msgs::CameraInfo> cam_info_ptr(new sensor_msgs::CameraInfo);
-  camera_calibration_parsers::readCalibration(filename, camera_name, *cam_info_ptr);
+  camera_calibration_parsers::readCalibration(projectdirectory+filename, camera_name, *cam_info_ptr);
   camerainfoCallback(cam_info_ptr);
 }
 
@@ -247,7 +247,7 @@ void PoseSelectionNode::callOptimization(ValidationNode & node, boost::shared_pt
     string file_prefix="DUMMY";
     nhPrivate.param("file_prefix", file_prefix, file_prefix);
     string splitstr = boost::lexical_cast<string>(splitID);
-    node.folderName = "/home/maierd/kin_calib_experiments/results/" + file_prefix + "/all_except_" + splitstr + "/" + file_prefix + "_" + boost::lexical_cast<string>(node.getOptimizationData().size());
+    node.folderName = "/home/kurt/kin_calib_experiments/results/" + file_prefix + "/all_except_" + splitstr + "/" + file_prefix + "_" + boost::lexical_cast<string>(node.getOptimizationData().size());
     cout << "\nWriting to " << node.folderName << endl;
     boost::filesystem::path dirpath(node.folderName);
     try

@@ -1,0 +1,16 @@
+<launch>  
+<param name="/use_sim_time" value="False" />
+  <node name="draw_frames" pkg="kinematic_calibration" type="draw_frames" args="/LLegMarker_frame" output="screen">
+    <param name="image_transport" value="compressed"/>
+    <remap from="image" to="forearm_camera_r/image_rect_color" />
+  </node>
+ <node name="input_viewer" pkg="image_view" type="image_view">
+    <remap from="image" to="forearm_camera_r/image_rect_color" />
+    <param name="autosize" value="True" />
+  </node>
+  <node name="output_viewer" pkg="image_view" type="image_view">
+    <remap from="image" to="image_out" />
+    <param name="autosize" value="True" />
+  </node>
+
+</launch>

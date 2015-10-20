@@ -18,12 +18,19 @@ ArucoContext::~ArucoContext() {
 }
 
 inline boost::shared_ptr<MarkerDetection> ArucoContext::getMarkerDetectionInstance() {
-	double markerSize = -1.0;
-	nh.param("aruco_markersize", markerSize, markerSize);
+	double markerSize = 0.0;
+	int markerId=0;
+
+	nh.param("aruco_markersize", markerSize,markerSize);
+	nh.param("aruco_id",  markerId,markerId);
+	//nhPrivate.getParam(chainName + "/aruco_id", markerId);
 	ROS_INFO("Using an aruco marker with side length %f (-1.0 if not set).",
 			markerSize);
-    boost::shared_ptr<ArucoMarkerDetection> instance (new ArucoMarkerDetection());
+	ROS_INFO("Using an aruco marker with id %d (-1.0 if not set).",
+			markerId);
+        boost::shared_ptr<ArucoMarkerDetection> instance (new ArucoMarkerDetection());
 	instance->setMarkerSize(markerSize);
+	instance->setMarkerId(markerId);
 	return instance;
 }
 

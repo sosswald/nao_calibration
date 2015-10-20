@@ -51,7 +51,9 @@ int main(int argc, char** argv) {
 	string chainName;
 	nh.getParam("chain_name", chainName);
 	string fileName = "poses_" + chainName + "_generated.yaml";
+	std::string projectdirectory;
 	nhPrivate.param("pose_file", fileName, fileName);
+        m_nhPrivate.getParam("project_directory", projectdirectory);
     // read pool of poses from files
     if ("file" == poseSource) {
         std::vector<string> filepaths;
@@ -61,7 +63,7 @@ int main(int argc, char** argv) {
             ROS_ERROR("You need to specify at least one filepath for the poses");
             return 1;
         }
-        FilePoseSource * poseSource = new FilePoseSource(filepaths);
+        FilePoseSource * poseSource = new FilePoseSource(filepaths,projectdirectory);
         PoseSelectionNode node(*poseSource);
         boost::shared_ptr<MeasurementPoseSet> poses = node.getOptimalPoseSet();
         //vector<string> ids = poseSource->getPoseIds(poses->getPoses());

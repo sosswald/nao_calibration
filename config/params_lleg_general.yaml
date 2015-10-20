@@ -1,9 +1,10 @@
 chain_name: lleg
 chain_root: HeadPitch_link
-chain_tip: l_sole
+chain_tip: l_ankle
 marker_type: aruco              # checkerboard, aruco, circle, color
 marker_frame: LLegMarker_frame
-
+aruco_markersize: 20            # optional; side length of the aruco marker in [mm]
+aruco_id: 15
 marker_transform_source: urdf   # 'tf' or 'urdf' (optional; if not set, default is 'urdf')
 
 # checkerboard specific parameters
@@ -11,5 +12,4 @@ checkerboard_rows: 4            # optional; if not set, default is 4
 checkerboard_columns: 4         # optional; if not set, default is 4
 checkerboard_squarelength: 10   # optional; side length of one square of the checkerboard in [mm]
 
-# aruco marker specific parameters
-aruco_markersize: 20            # optional; side length of the aruco marker in [mm]
+

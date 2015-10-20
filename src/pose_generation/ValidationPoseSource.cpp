@@ -12,6 +12,7 @@
 #include <rosbag/view.h>
 #include <Eigen/Core>
 #include <boost/foreach.hpp>
+#include <yaml-cpp/yaml.h>
 
 namespace kinematic_calibration {
 
@@ -34,6 +35,70 @@ ValidationPoseSource::ValidationPoseSource(int numOfPartitionsPerChain, const ro
 ValidationPoseSource::~ValidationPoseSource()
 {
 }
+
+
+
+
+
+
+
+
+
+
+void ValidationPoseSource::addPosesFromYaml(const std::vector<std::string> & filenames,std::string projectdirectory)
+{
+  for(unsigned int i =0; i < filenames.size(); ++i)
+     addPosesFromYaml(filenames[i],projectdirectory);
+}
+
+void ValidationPoseSource::addPosesFromYaml(const std::string & filename,std::string projectdirectory)
+{
+   cout << "Reading from " << filename << endl;
+   YAML::Node doc = YAML::LoadFile(projectdirectory+filename);
+   cout << "Parsing " << doc.size() << " elements"<<endl;
+   for(YAML::const_iterator it=doc.begin();it != doc.end();++it) {
+      std::string key = it->first.as<std::string>();       // <- key
+      sensor_msgs::JointState js;
+      cout << "key is " << key <<" ";
+      if (it->second["joint_names"].size() != it->second["positions"].size())
+      {
+         cerr << "joint_names and positions have different size for key " << key << endl;
+         throw std::runtime_error("error parsing yaml file");
+      }
+      YAML::Node child = it->second["joint_names"];
+      for (std::size_t i=0;i<child.size();i++) {
+	
+         js.name.push_back(child[i].as<string>());
+      }
+      child = it->second["positions"];
+      for (std::size_t i=0;i<child.size();i++) {
+		//std::cout<<child[i].as<double>()<< " ";
+         js.position.push_back(child[i].as<double>());
+      }
+      string chainName = key.substr(0,4); // here is for leg
+      cout << chainName <<" ";
+      string stampStr="";
+      string search="leg";
+      if (key.find(search)!=std::string::npos)
+      	 stampStr = key.substr(4); // here is for leg
+      else  
+	stampStr = key.substr(8);
+     // cout << stampStr<<"\n";
+
+      js.header.stamp.fromSec( boost::lexical_cast<int>(stampStr) );
+     cout << js.header.stamp<<std::endl;
+      this->poses[chainName].addPose(key, js);
+      
+      this->ids[js.header.stamp] = key;
+   }
+
+}
+
+
+
+
+
+
 
 void ValidationPoseSource::addPosesFromBagFile(const std::vector<std::string> & filenames)
 {
@@ -134,7 +199,7 @@ void ValidationPoseSource::getPoses(const KinematicChain& kinematicChain, vector
         poses.push_back(MeasurementPose(kinematicChain, it->second, it->first));
     }
   }
-
+  ROS_INFO("ValidationPoseSource::getPoses() with pose size %zu later on", this->poses.size());
 }
 
 shared_ptr<MeasurementPoseSet> ValidationPoseSource::getInitialPoseSet(const KinematicChain& kinematicChain,

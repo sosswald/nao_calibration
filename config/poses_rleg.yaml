@@ -118,11 +118,6 @@ rleg024:
   time_from_start: 1.0
   positions: [0.1248, -0.478663, -0.642905, -0.44854, -0.995318, 0.595671, 0.22008, 0.161135]
 
-rleg025:
-  joint_names: ["HeadPitch", "HeadYaw", "RHipYawPitch", "RHipRoll", "RHipPitch", "RKneePitch", "RAnklePitch", "RAnkleRoll"]
-  time_from_start: 1.0
-  positions: [0.215875, -0.197457, -0.803504, 0.0185945, -0.525969, 0.583714, 0.176039, 0.134908]
-
 rleg026:
   joint_names: ["HeadPitch", "HeadYaw", "RHipYawPitch", "RHipRoll", "RHipPitch", "RKneePitch", "RAnklePitch", "RAnkleRoll"]
   time_from_start: 1.0
@@ -207,11 +202,6 @@ rleg042:
   joint_names: ["HeadPitch", "HeadYaw", "RHipYawPitch", "RHipRoll", "RHipPitch", "RKneePitch", "RAnklePitch", "RAnkleRoll"]
   time_from_start: 1.0
   positions: [0.0646264, -1.0893, -0.83977, -0.419235, -1.17222, 0.410933, 0.00498594, 0.197818]
-
-rleg043:
-  joint_names: ["HeadPitch", "HeadYaw", "RHipYawPitch", "RHipRoll", "RHipPitch", "RKneePitch", "RAnklePitch", "RAnkleRoll"]
-  time_from_start: 1.0
-  positions: [0.0420925, -0.61551, -0.879414, -0.293716, -1.26459, 0.76775, -0.447332, -0.0200911]
 
 rleg044:
   joint_names: ["HeadPitch", "HeadYaw", "RHipYawPitch", "RHipRoll", "RHipPitch", "RKneePitch", "RAnklePitch", "RAnkleRoll"]

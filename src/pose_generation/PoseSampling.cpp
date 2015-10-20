@@ -7,6 +7,7 @@
 
 #include <pose_generation/PoseSampling.h>
 #include <common/helpers.h>
+#include <fstream>
 
 #include <boost/smart_ptr/make_shared.hpp>
 #include <image_geometry/pinhole_camera_model.h>
@@ -254,6 +255,10 @@ void PoseSampling::initializeSrdf(const string& robotName,
 	string currentChainString = currentChainStream.str();
 	int groupPos = srdfString.find(groupPlaceholder);
 	srdfString.replace(groupPos, groupPlaceholder.length(), currentChainString);
+
+        std::ofstream debugStream("/tmp/modified.srdf");
+        debugStream << srdfString << std::endl;
+        debugStream.close();
 
 	if (debug) {
 		cout << "SRDF (modified): \n" << srdfString << endl;
@@ -730,8 +735,7 @@ void RandomNumberGenerator::plot(const double min, const double max,
 	fprintf(gnuplotPipe, "set xrange [min:max];\n");
 	fprintf(gnuplotPipe, "set yrange [0:];\n");
 	fprintf(gnuplotPipe, "set offset graph 0.05,0.05,0.05,0.0;\n");
-	fprintf(gnuplotPipe, "set xtics min,(max-min)/5,max;\n", min, max, min,
-			max);
+	fprintf(gnuplotPipe, "set xtics min,(max-min)/5,max;\n");
 	fprintf(gnuplotPipe, "set boxwidth width*0.9;\n");
 	fprintf(gnuplotPipe, "set style fill solid 0.5;\n");
 	fprintf(gnuplotPipe, "set tics out nomirror;\n");

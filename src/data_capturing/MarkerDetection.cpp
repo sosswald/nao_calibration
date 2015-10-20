@@ -39,6 +39,9 @@ bool MarkerDetection::writeImage(
     return success;
 }
 
+void MarkerDetection::setMarkerId(const int& markerId) {
+	this->markerId = markerId;
+}
 void MarkerDetection::msgToImg(const sensor_msgs::ImageConstPtr& in_msg,
 		cv::Mat& out_image) {
 	cv_bridge::CvImageConstPtr cv_ptr;

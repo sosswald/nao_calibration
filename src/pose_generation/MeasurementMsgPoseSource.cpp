@@ -43,6 +43,7 @@ void MeasurementMsgPoseSource::getPoses(const KinematicChain& kinematicChain,
             this->poses[kinematicChain.getName()];
     for (PoseSourcePool::const_iterator it = pool.begin();
             it != pool.end(); it++) {
+		std::cout<<it->second<<std::endl;
         poses.push_back(MeasurementPose(kinematicChain, it->second, it->first));
     }
 }

@@ -89,7 +89,7 @@ private:
 };
 
 
-/*
+
 class Plot2D {
 public:
     enum OutputType {
@@ -147,7 +147,7 @@ private:
     OutputType type;
     string title;
 };
-*/
+
 
 
 } /* namespace kinematic_calibration */

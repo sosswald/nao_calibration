@@ -1,17 +1,17 @@
-pose_files: ['/home/kurt/catkin_ws/src/nao_calibration-master/config/poses_larm_750.yaml',
-'/home/kurt/catkin_ws/src/nao_calibration-master/config/poses_rarm_750.yaml'] # list of pose files 
-init_camera_from_file: true # init camera from a file or camera info msg?
-camera_file_location: /home/kurt/catkin_ws/src/nao_calibration-master/config/camera.yaml #initial camera calibration parameters
+project_directory: /home/kurt/catkin_ws/src/nao_calibration-master/
+pose_files: ['config/poses_lleg.yaml'] # ['config/poses_larm_750.yaml'] # ', config/poses_rleg.yaml'] ['config/poses_larm_750.yaml' 'config/poses_rarm_750.yaml']
+init_camera_from_file: true
+camera_file_location: config/camera.yaml #initial camera calibration parameters
 camera_tf_frame: "CameraBottom_frame" # tf frame name of the camera
-chains: ['larm', 'rarm'] # kinematic chains to consider in calibration
-chain_names: ['larm', 'rarm'] # same as above, TODO: unify
+chains: ['lleg'] # kinematic chains to consider in calibration 'larm', 'rarm', 'lleg', 'rleg', 
+chain_names: ['lleg'] # same as above, TODO: unify 'larm', 'rarm','lleg', 'rleg',
 
 # pose selection specific paramters
-selection_strategy: DETMAXINC # possible options: DETMAX, DETMAXDEC, DETMAXINC
+selection_strategy: INC # possible options: DETMAX, DETMAXDEC, DETMAXINC
 criterion: DET # DET, NAI, etc.
 scale_jacobian: True # see paper
-maximum_number_of_poses: 25 # how many poses/configurations should be used for calibration?
-minimum_number_of_poses: 14 # minimum: 21 for whole body, 13 for both arms  # start with how many poses?
+maximum_number_of_poses: 20 # how many poses/configurations should be used for calibration?
+minimum_number_of_poses: 15 # minimum: 21 for whole body, 13 for both arms  # start with how many poses?
 detmax_iterations: 2 # internal iterations (for the detmax algorithm)
 
 
@@ -23,14 +23,13 @@ dofs:
     rleg: 4 # change to 5 if lleg is not to be included in calibration, also remove RHipYawPitch from ignore_joints
 
 #ignore these joints in optimization (because of redundancy)
-ignore_joints: [HeadPitch, LWristYaw, RWristYaw, RHipYawPitch, RAnkleRoll, LAnkleRoll]
-
+ignore_joints: [HeadPitch, LWristYaw, RWristYaw, RAnkleRoll, RHipYawPitch, LAnkleRoll, LHipYawPitch]
 
 # optimization options
 calibrate_joint_6D: False
 calibrate_joint_offsets: True 
 calibrate_camera_transform: True 
-calibrate_camera_intrinsics: True 
+calibrate_camera_intrinsics: False
 calibrate_marker_transform: True 
 use_robust_kernel: True
 max_iterations: 50

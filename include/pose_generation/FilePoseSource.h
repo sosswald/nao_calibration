@@ -13,7 +13,7 @@ public:
     /*
      * Constructor expects a vector of filepaths to yaml files
      */
-    FilePoseSource(const std::vector<std::string> & filepaths);
+    FilePoseSource(const std::vector<std::string> & filepaths, std::string projectdirectory);
 
     // Destructor
     virtual ~FilePoseSource();
@@ -35,8 +35,8 @@ public:
 
 protected:
     virtual void addPosesFromBagFile(const std::vector<std::string> & filenames);
-    virtual void addPosesFromYaml(const std::vector<std::string> & filenames);
-    virtual void addPosesFromYaml(const std::string & filenames);
+    virtual void addPosesFromYaml(const std::vector<std::string> & filenames, std::string projectdirectory);
+    virtual void addPosesFromYaml(const std::string & filenames, std::string projectdirectory);
 
 
 };

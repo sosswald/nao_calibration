@@ -46,14 +46,18 @@ bool ArucoMarkerDetection::detect(const cv::Mat& inImage, vector<double>& out) {
 
 	// use a copy of the input image
 	cv::Mat outImage = inImage.clone();
-
 	// try to detect
+	//saveImage(outImage);
+  	//this->writeImage("/tmp/a.jpg");
 	detector.detect(outImage, markers);
+
 	if (markers.size() < 1) {
 		// no marker found
 		return false;
 	}
-
+	//ROS_INFO("%d    %d \n",markerId,markers[0].id);
+	if ( markers[0].id!=markerId)
+		return false;
 	// save the image
 	saveImage(outImage);
 
@@ -94,5 +98,10 @@ void ArucoMarkerDetection::drawMarker(cv::Mat& image) {
 void ArucoMarkerDetection::setMarkerSize(const double& markerSize) {
 	this->markerSize = markerSize;
 }
+
+
+/*void ArucoMarkerDetection::setChain(const string& chainName) {
+	this->chainName = chainName;
+}*/
 
 } /* namespace kinematic_calibration */

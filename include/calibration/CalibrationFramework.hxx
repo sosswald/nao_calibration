@@ -14,6 +14,7 @@
 #include <common/MeasurementPose.h>
 #include <common/helpers.h>
 #include <pose_generation/DetmaxPoseSelectionStrategy.h>
+#include <optimization/OptimizationNode.h>
 
 namespace kinematic_calibration {
 
@@ -31,11 +32,11 @@ void CalibrationFramework<PoseSourceType>::initialize()
     // order of member initialization is important
     initPoseSource();
     initializeCamera();
-    initializeKinematicChain();
-    initializeState();
-    initPoseSet();
-    initPoseSelectionStrategy();
-    initOptimization();
+    initializeKinematicChain();ROS_INFO("JJJJJJJJJJJJJJJ");
+    initializeState();ROS_INFO("JJJJJJJJJJJJJJJ");
+    initPoseSet();ROS_INFO("JJJJJJJJJJJJJJJ");
+    initPoseSelectionStrategy();ROS_INFO("JJJJJJJJJJJJJJJ");
+    initOptimization();ROS_INFO("JJJJJJJJJJJJJJJ");
 }
 
 template <typename PoseSourceType>
@@ -57,7 +58,7 @@ void CalibrationFramework<PoseSourceType>::initializeKinematicChain()
     // retrieve the names of the kinematic chains to be considered in the calibration process
     string chainName, chainRoot, chainTip;
     vector<string> chainNames;
-    m_nhPrivate.param("chain_names", chainNames, chainNames);
+    m_nhPrivate.param("/onlineCalibration/chain_names", chainNames, chainNames);
     if (chainNames.empty())
     {
         ROS_ERROR("Received emtpy chain names. Quitting!");
@@ -69,8 +70,8 @@ void CalibrationFramework<PoseSourceType>::initializeKinematicChain()
     {
         chainName = chainNames[i];
         ROS_DEBUG("Looking for chain_root/chain_tip in namespace %s/[chainName]/",m_nhPrivate.getNamespace().c_str());
-        m_nhPrivate.getParam(chainName+"/chain_root", chainRoot);
-        m_nhPrivate.getParam(chainName+"/chain_tip", chainTip);
+        m_nhPrivate.getParam("/onlineCalibration/"+chainName+"/chain_root", chainRoot);
+        m_nhPrivate.getParam("/onlineCalibration/"+chainName+"/chain_tip", chainTip);
         // create actual KinematicChain
         m_kinematicChains[chainName] = boost::make_shared<KinematicChain>(kdlTree, chainRoot, chainTip, chainName);
     }
@@ -95,7 +96,7 @@ void CalibrationFramework<PoseSourceType>::initializeState()
 
     // list of joints to be ignored in calibration (typically redundant joints)
     vector<string> ignoreJoints;
-    m_nhPrivate.getParam("ignore_joints", ignoreJoints);
+    m_nhPrivate.getParam("/onlineCalibration/ignore_joints", ignoreJoints);
 
     // set all joint offsets to zero by iterating over the kinematic chains
     for ( map<string, KinematicChainType>::iterator kit = m_kinematicChains.begin(); kit != m_kinematicChains.end(); ++kit)
@@ -120,7 +121,7 @@ void CalibrationFramework<PoseSourceType>::initializeState()
         string markerFrame;
         string chainName = kit->first;
         ROS_DEBUG("Looking for marker_frame in namespace %s/[chainName]/",m_nhPrivate.getNamespace().c_str());
-        m_nhPrivate.getParam(chainName + "/marker_frame", markerFrame);
+        m_nhPrivate.getParam("/onlineCalibration/"+chainName + "/marker_frame", markerFrame);
         // this call initializes the marker transformation
         m_initialState->addMarker(chainName, kit->second->getTip(), markerFrame);
     }
@@ -149,8 +150,9 @@ template <typename PoseSourceType>
 void CalibrationFramework<PoseSourceType>::initializeCameraFromFile() 
 {
     // initialize the camera model from a opencv calibration (yaml/ini) file
-    std::string filename;
-    m_nhPrivate.param("camera_file_location", filename, filename);
+    std::string filename; std::string projectdirectory;
+    m_nhPrivate.param("/onlineCalibration/camera_file_location", filename, filename);
+	 m_nhPrivate.getParam("/onlineCalibration/project_directory", projectdirectory);
     // name (id) of the camera
     string cameraName("nao_camera");
     ROS_INFO("Setting camera from file %s", filename.c_str());
@@ -158,10 +160,10 @@ void CalibrationFramework<PoseSourceType>::initializeCameraFromFile()
     // using a camera info object allows to use the callback API to initialize the camera model
     boost::shared_ptr<sensor_msgs::CameraInfo> camInfoPtr(new sensor_msgs::CameraInfo);
     // parse the file
-    camera_calibration_parsers::readCalibration(filename, cameraName, *camInfoPtr);
+    camera_calibration_parsers::readCalibration(projectdirectory+filename, cameraName, *camInfoPtr);
     // calibration file does not contain TF frame, so it needs to be manually specified
     std::string tfFrame;
-    if(!m_nhPrivate.getParam("camera_tf_frame", tfFrame))
+    if(!m_nhPrivate.getParam("/onlineCalibration/camera_tf_frame", tfFrame))
         throw std::runtime_error("No camera_tf_frame specified (when initializing camera from a file)");
     camInfoPtr->header.frame_id = tfFrame;
     // initialize the camera model
@@ -221,16 +223,19 @@ template <typename PoseSourceType>
 void CalibrationFramework<PoseSourceType>::initializeCamera() 
 {
     bool initCamFromFile = false;
-    m_nhPrivate.param("init_camera_from_file",initCamFromFile, initCamFromFile);
-    if (initCamFromFile)
+    m_nhPrivate.param("/onlineCalibration/init_camera_from_file",initCamFromFile, initCamFromFile);
+    if (initCamFromFile){
         initializeCameraFromFile();
+        ROS_INFO("BEN BURAYA GIR DEMISTIM SANA!!!!!");
+	}
     else
     {
         m_cameraInfoSubscriber = m_nh.subscribe("/camera/camera_info", 1, &CalibrationFramework::setCameraModel, this);
-        ROS_INFO("Waiting for camera info message...");
+        ROS_INFO("Waiting for camera info message...aaaa");
         while (!m_cameraModel.initialized()) {
             ros::Rate(10.0).sleep();
             ros::spinOnce();
+            ROS_INFO("KKKKKKKKKKKK");
         }
         m_cameraInfoSubscriber.shutdown();
     }
@@ -244,7 +249,7 @@ void CalibrationFramework<PoseSourceType>::initPoseSet()
 {
     // temporary pool of poses
     std::vector<MeasurementPose> posePool;
-
+    ROS_INFO("%d",m_kinematicChains.size());
     vector<string> chainNames; // just needed for the ROS_INFO
     // get all poses for all kinematic chains and store in m_posePool
     for(map<string, KinematicChainType>::iterator nameAndChainIt = m_kinematicChains.begin(); nameAndChainIt!= m_kinematicChains.end(); ++nameAndChainIt)
@@ -270,15 +275,15 @@ void CalibrationFramework<PoseSourceType>::initPoseSelectionStrategy()
 {
     // maximum and minimum number of poses to select (NodeHandle does not supports size_t in getParam)
     int maxNumPoses, minNumPoses;
-    m_nhPrivate.getParam("maximum_number_of_poses", maxNumPoses);
-    m_nhPrivate.getParam("minimum_number_of_poses", minNumPoses);
+    m_nhPrivate.getParam("/onlineCalibration/maximum_number_of_poses", maxNumPoses);
+    m_nhPrivate.getParam("/onlineCalibration/minimum_number_of_poses", minNumPoses);
     if (maxNumPoses < 0 || minNumPoses < 0 )
         throw std::runtime_error("Invalid number of poses specified");
     m_maximumNumberOfPoses = maxNumPoses;
     m_minimumNecessaryPoses = minNumPoses;
     string selectionStrategyName;
     // selection is performed using a certain strategy
-    m_nhPrivate.param("selection_strategy", selectionStrategyName, selectionStrategyName);
+    m_nhPrivate.param("/onlineCalibration/selection_strategy", selectionStrategyName, selectionStrategyName);
     if (selectionStrategyName == "DETMAXINC")
     {
         ROS_INFO("Using DETMAXINC pose selection strategy");
@@ -294,6 +299,14 @@ void CalibrationFramework<PoseSourceType>::initPoseSelectionStrategy()
         m_initializationStrategy.reset(new RandomPoseSelectionStrategy(m_minimumNecessaryPoses));
         // incrementally add 1 randomly sampled pose
         m_incrementalStrategy.reset(new RandomSuccessorPoseSelectionStrategy(1));
+    }
+    else if (selectionStrategyName == "INC")
+    {
+        ROS_INFO("Using random pose selection strategy");
+        // randomly initialize the set of selected poses with the minimum number
+        m_initializationStrategy.reset(new IncrementalPoseSelectionStrategy(m_minimumNecessaryPoses));
+        // incrementally add 1 randomly sampled pose
+        m_incrementalStrategy.reset(new IncrementalPoseSelectionStrategy(1));
     }
     else
         ROS_ERROR("Unknown pose selection strategy: %s", selectionStrategyName.c_str());
@@ -316,7 +329,7 @@ void CalibrationFramework<PoseSourceType>::initPoseSelectionStrategy()
     ROS_INFO("Using criterion : %s", criterion.c_str());
 
     bool scaleJacobian = true;
-    m_nhPrivate.param("scale_jacobian", scaleJacobian, scaleJacobian);
+    m_nhPrivate.param("/onlineCalibration/scale_jacobian", scaleJacobian, scaleJacobian);
     m_observabilityIndex->setScaleJacobian(scaleJacobian);
     ROS_DEBUG("Scaling the jacobian matrix is %s. (Parameter: scale_jacobian)",
             scaleJacobian ? "ENABLED" : "DISABLED");
@@ -396,6 +409,8 @@ bool CalibrationFramework<PoseSourceType>::optimize()
             continue; // just leave it out then..
         }
         m_optimizationInterface->addOptimizationData(m);
+  //      m_opNode->addOptimizationData(m);
+
     }
 
     // check if enough poses (constraints) are provided to the optimizer

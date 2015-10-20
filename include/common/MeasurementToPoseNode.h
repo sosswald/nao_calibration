@@ -16,7 +16,7 @@
 #include <fstream>
 
 #include "kinematic_calibration/measurementData.h"
-#include "naoqi_msgs/JointTrajectoryGoal.h"
+#include "naoqi_bridge_msgs/JointTrajectoryGoal.h"
 
 namespace kinematic_calibration {
 

@@ -765,6 +765,7 @@ void ValidationNode::printPartlyError() {
 						this->optimizationData[i].jointState,
                     this->optimizationData[i].id,
 						calibrationOptions));
+	ROS_INFO("%s\n", this->optimizationData[i].id.c_str());
 	}
 
     for (unsigned int i = 0; i < this->validataionData.size(); i++) {

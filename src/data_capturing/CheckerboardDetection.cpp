@@ -53,6 +53,7 @@ bool CheckerboardDetection::detect(const sensor_msgs::ImageConstPtr& in_msg,
 		CheckerboardData& out) {
 	cv_bridge::CvImageConstPtr cv_ptr;
 
+	//ROS_INFO("hallooo");
 	// Convert from ROS message to OpenCV image.
 	try {
 		cv_ptr = cv_bridge::toCvShare(in_msg, enc::BGR8);
@@ -66,7 +67,7 @@ bool CheckerboardDetection::detect(const sensor_msgs::ImageConstPtr& in_msg,
 
 bool CheckerboardDetection::detect(const cv::Mat& image,
 		CheckerboardData& out) {
-
+	//ROS_INFO("hallooo2");
 	// Detect corner using OpenCV.
 	cv::Mat gray;
 	cv::cvtColor(image, gray, CV_BGR2GRAY);
@@ -80,9 +81,8 @@ bool CheckerboardDetection::detect(const cv::Mat& image,
 
 	if (patternfound) {
 		//ROS_INFO("I FOUND IT");
-		cv::cornerSubPix(gray, corners, cv::Size(11, 11), cv::Size(-1, -1),
-				cv::TermCriteria(CV_TERMCRIT_EPS + CV_TERMCRIT_ITER, 30, 0.1));
-        cv::drawChessboardCorners(gray, this->patternSize, cv::Mat(corners), patternfound);
+		cv::cornerSubPix(gray, corners, cv::Size(11, 11), cv::Size(-1, -1),cv::TermCriteria(CV_TERMCRIT_EPS + CV_TERMCRIT_ITER, 30, 0.1));
+                cv::drawChessboardCorners(gray, this->patternSize, cv::Mat(corners), patternfound);
         if (debug)
         {
             cv::imshow("CHESS_DETECTOR", gray);
@@ -124,6 +124,7 @@ bool CheckerboardDetection::detect(const cv::Mat& image,
 
 bool CheckerboardDetection::detect(const sensor_msgs::ImageConstPtr& in_msg,
 		vector<double>& out) {
+	//ROS_INFO("hallooo3");
 	CheckerboardData cb;
 	out.resize(4);
 	if (detect(in_msg, cb)) {

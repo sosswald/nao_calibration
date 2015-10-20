@@ -16,7 +16,6 @@
 #include <tf/tf.h>
 #include <cmath>
 #include <iostream>
-#include <map>
 #include <utility>
 #include <string>
 #include <fstream>
@@ -42,7 +41,9 @@ G2oOptimizationInterface::G2oOptimizationInterface(CalibrationContext * ctext) :
     modelLoader.getKdlTree(kdlTree);
 
     this->calibrationOptions = context->getCalibrationOptions();
-
+   // std::string filename; std::string projectdirectory;
+  //  m_nhPrivate.param("camera_file_location", filename, filename);
+    //std::cout<<this->calibrationOptions.markerOptimizationType<<std::endl;
 }
 
 
@@ -91,13 +92,16 @@ bool G2oOptimizationInterface::addPosesFromBagFile(const std::vector<std::string
 
 
 bool G2oOptimizationInterface::initializeCameraFromFile() {
-  std::string filename;
-  m_nhPrivate.param("camera_file_location", filename, filename);
+  std::string filename; std::string projectdirectory;
+  m_nhPrivate.param("/onlineCalibration/camera_file_location", filename, filename);
+  std::cout<<filename<< " ";
+  m_nhPrivate.getParam("/onlineCalibration/project_directory", projectdirectory);
+  std::cout<<projectdirectory<<std::endl;
   string camera_name("nao_camera");
-  ROS_INFO("OptimizationInterface sets camera from file %s", filename.c_str());
+  ROS_INFO("OptimizationInterface sets camera from file %s", (projectdirectory+filename).c_str());
 
   boost::shared_ptr<sensor_msgs::CameraInfo> cam_info_ptr(new sensor_msgs::CameraInfo);
-  if(!camera_calibration_parsers::readCalibration(filename, camera_name, *cam_info_ptr))
+  if(!camera_calibration_parsers::readCalibration(projectdirectory+filename, camera_name, *cam_info_ptr))
     return false;
   setCameraModelFromMsg(cam_info_ptr);
   return true;
@@ -129,6 +133,7 @@ void G2oOptimizationInterface::addNewKinematicChain(const measurementDataConstPt
     string chainTip = data.chain_tip;
     // instantiate the kinematic chain
     KinematicChain kinematicChain(kdlTree, chainRoot, chainTip, chainName);
+    std::cout<<"aaaaaaaaa "<<chainRoot<<std::endl;
     this->kinematicChains.push_back(kinematicChain);
     this->nameToChain[chainName] = &(this->kinematicChains.back());
     ROS_INFO("Receive data for chain %s.", chainName.c_str());
@@ -137,15 +142,15 @@ void G2oOptimizationInterface::addNewKinematicChain(const measurementDataConstPt
     if ("" != msg->marker_frame) {
         // message should contain the info about the marker frame
         markerFrame = msg->marker_frame;
-    } else if (m_nhPrivate.hasParam(chainName + "/" + "marker_frame")) {
+    } else if (m_nhPrivate.hasParam("/onlineCalibration/"+chainName + "/" + "marker_frame")) {
         // fallback mechanism
-        m_nhPrivate.getParam(chainName + "/" + "marker_frame", markerFrame);
+        m_nhPrivate.getParam("/onlineCalibration/"+chainName + "/" + "marker_frame", markerFrame);
     }
     if (markerFrame.length() > 0) {
         // determine the source (default is from URDF)
         CalibrationState::TransformSource source = CalibrationState::ROSPARAM_URDF;
         string sourceString;
-        m_nhPrivate.param(chainName + "/" + "marker_transform_source", sourceString, sourceString);
+        m_nhPrivate.param("/onlineCalibration/"+chainName + "/" + "marker_transform_source", sourceString, sourceString);
         if ("tf" == sourceString)
             source = CalibrationState::TF;
         // delegate the initialization
@@ -161,7 +166,7 @@ void G2oOptimizationInterface::processMeasurementDataMsg(const measurementDataCo
         ROS_WARN("Received an invalid measurementData message");
         return;
     }
-
+    ROS_INFO("eeeeeeeeeeeeeeeeeee");
     // add new kinematic chain if necessary
     addNewKinematicChain(msg);
 
@@ -180,7 +185,7 @@ void G2oOptimizationInterface::addValidationData(const measurementDataConstPtr &
         ROS_WARN("Received an invalid measurementData message");
         return;
     }
-
+    ROS_INFO("dddddddddddddddd");
     // add new kinematic chain if necessary
     addNewKinematicChain(msg);
 
@@ -195,8 +200,8 @@ void G2oOptimizationInterface::addOptimizationData(const measurementDataConstPtr
         ROS_WARN("Received an invalid measurementData message");
         return;
     }
-
-    // add new kinematic chain if necessary
+    ROS_INFO("cccccccccccccccccc");
+	// add new kinematic chain if necessary
     addNewKinematicChain(msg);
 
     optimizationData.push_back(*msg);
@@ -222,11 +227,10 @@ bool G2oOptimizationInterface::measurementOk(const measurementDataConstPtr& msg)
 
 bool G2oOptimizationInterface::optimize(){
 
-	ROS_INFO("Im heree2");
     if (! cameraModel.initialized())
     {
         ROS_ERROR("Camera Model is not initialized! Quitting.");
-        throw std::runtime_error("Camera model not initialized in OptimizationNode::optimize()");
+        throw std::runtime_error("Camera model not initialized in G2oOptimizationInterfaceOptimizationNode::optimize()");
     }
 
     CalibrationState initialState = this->initialState;
@@ -252,7 +256,6 @@ bool G2oOptimizationInterface::optimize(){
 
     // initialize the camera intrinsics
     initialState.cameraInfo = cameraModel.cameraInfo();
-	ROS_INFO("Im heree3");
     return optimize(initialState);
 }
 
@@ -263,13 +266,13 @@ bool G2oOptimizationInterface::optimizeRobust(const CalibrationState & state) {
 }
 
 bool G2oOptimizationInterface::optimize(const CalibrationState & state) {
-    /*if (! cameraModel.initialized())
+    if (! cameraModel.initialized())
     {
         ROS_ERROR("Camera Model is not initialized! Quitting.");
 	ROS_INFO("I found it finally");
 	//ROS_INFO("%s", state.cameraInfo);
-        throw std::runtime_error("Camera model not initialized in ValidatioNode::optimize() and Im in function G2oOptimizationInterface::optimize");
-    }*/
+        throw std::runtime_error("Camera model not initialized called by ValidatioNode::optimize() and Im in function G2oOptimizationInterface::optimize");
+    }
 
     // instantiate the frame image converter
     FrameImageConverter frameImageConverter(cameraModel);

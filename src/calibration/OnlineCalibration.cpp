@@ -33,11 +33,13 @@ OnlineCalibration::OnlineCalibration() {
 void OnlineCalibration::initPoseSource()
 {
     std::vector<string> filepaths;
+    std::string projectdirectory;
     m_nhPrivate.getParam("pose_files", filepaths);
+    m_nhPrivate.getParam("project_directory", projectdirectory);
     if (filepaths.empty())
         throw std::runtime_error("You need to specify at least one file containing robot poses [param pose_files]");
     // FilePoseSource is derived from MeasurementMsgPoseSource and reads the MeasurementMsgs from file(s) upon creation
-    m_poseSource.reset(new FilePoseSource(filepaths));
+    m_poseSource.reset(new FilePoseSource(filepaths,projectdirectory));
 
 }
 
@@ -49,6 +51,9 @@ void OnlineCalibration::initOptimization()
     CalibrationContext* context = new RosCalibContext(m_nhPrivate);
     // G2oOptimizationInterface wraps the g2o-optimizer (Kuemmerle et al., 2011)
     m_optimizationInterface.reset(new G2oOptimizationInterface(context));
+    m_optimizationInterface->initializeCameraFromFile();
+ //   m_opNode.reset(new OptimizationNode(context));
+ //   m_opNode->startLoop();
 }
 
 OnlineCalibration::~OnlineCalibration() {
@@ -189,7 +194,6 @@ void OnlineCalibration::selectAndOptimize(boost::shared_ptr<PoseSelectionStrateg
     // (but only if new observations are available and a minimum number of poses have been observed)
     if (newObservedPoses > 0  && minimumNumberOfPosesReached() )
     {
-	ROS_INFO("Im heree");
         if(!optimize()) // optimize() also sets the new state	
             ROS_ERROR("Could not optimize selected poses!"); // not fatal because we can continue trying with more poses
         ROS_INFO("Optimization took %f s for %d poses", (ros::Time::now() - t0).toSec(), m_resultSet->getNumberOfPoses());
@@ -234,7 +238,7 @@ int main(int argc, char** argv) {
 
     kinematic_calibration::OnlineCalibration onlineCalibration;
     onlineCalibration.calibrateAndPublish();
-    ROS_INFO("Calibration finished!");
+    ROS_INFO("Calibration finished!"); ros::shutdown();
 
 	return 0;
 }

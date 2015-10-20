@@ -8,6 +8,7 @@ int main(int argc, char ** argv)
   ros::init(argc,argv,"dataCapturing");
   ros::NodeHandle m_nhPrivate("~");
   RosCalibContext context(m_nhPrivate);
-  GeneralDataCapture d(context);
+  GeneralDataCapture d(context);  
   ros::spin();
+d.myfile.close();
 }

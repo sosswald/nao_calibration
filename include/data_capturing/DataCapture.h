@@ -13,10 +13,10 @@
 #include <image_transport/image_transport.h>
 #include <image_transport/subscriber.h>
 #include <kinematic_calibration/measurementData.h>
-#include <naoqi_msgs/BodyPoseAction.h>
-#include <naoqi_msgs/BodyPoseGoal.h>
-#include <naoqi_msgs/JointTrajectoryAction.h>
-#include <naoqi_msgs/JointTrajectoryActionResult.h>
+#include <naoqi_bridge_msgs/BodyPoseAction.h>
+#include <naoqi_bridge_msgs/BodyPoseGoal.h>
+#include <naoqi_bridge_msgs/JointTrajectoryAction.h>
+#include <naoqi_bridge_msgs/JointTrajectoryActionResult.h>
 #include <ros/callback_queue.h>
 #include <ros/node_handle.h>
 #include <ros/publisher.h>
@@ -38,6 +38,8 @@
 #include "../common/CalibrationContext.h"
 #include "../common/MarkerContext.h"
 #include <common/Observation.h>
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -48,6 +50,7 @@ namespace kinematic_calibration {
  */
 class DataCapture {
 public:
+	std::ofstream myfile;  
 	enum Region {
 		LEFT_TOP, LEFT_BOTTOM, RIGHT_TOP, RIGHT_BOTTOM, CENTER
 	};
@@ -75,6 +78,9 @@ public:
 			vector<string> additionalJoints = vector<string>(),
 			vector<double> additionalPositions = vector<double>());
 	void moveArmDown();
+	void moveLegDown();
+        void sitDown();
+	void standUp();
 	void findMarker();
 	void moveMarkerToImageRegion(Region region);
     void retrieveParamsForChain(const std::string & chainName);
@@ -94,8 +100,10 @@ protected:
 	image_transport::ImageTransport it;
     image_transport::Publisher captureVisPub;
 	ros::Publisher measurementPub;
+	ros::Publisher resultPub;
     boost::shared_ptr<MarkerDetection> markerDetection;
-	vector<double> markerData;
+	std::vector<double> markerData;
+	//cv::Point<double> markerpoint;
     boost::shared_ptr<MarkerContext> markerContext;
 	string markerType;
 	string chainName;
@@ -103,9 +111,9 @@ protected:
 	bool markerFound;
 	bool receivedJointStates;
 	bool receivedImage;
-    actionlib::SimpleActionClient<naoqi_msgs::JointTrajectoryAction> stiffnessClient;
-    actionlib::SimpleActionClient<naoqi_msgs::JointTrajectoryAction> trajectoryClient;
-    actionlib::SimpleActionClient<naoqi_msgs::BodyPoseAction> bodyPoseClient;
+    actionlib::SimpleActionClient<naoqi_bridge_msgs::JointTrajectoryAction> stiffnessClient;
+    actionlib::SimpleActionClient<naoqi_bridge_msgs::JointTrajectoryAction> trajectoryClient;
+    actionlib::SimpleActionClient<naoqi_bridge_msgs::BodyPoseAction> bodyPoseClient;
 	vector<string> headJointNames;
 	image_geometry::PinholeCameraModel cameraModel;
 	tf::TransformListener transformListener;

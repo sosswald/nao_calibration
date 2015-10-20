@@ -13,7 +13,7 @@
 #include <boost/bind/placeholders.hpp>
 #include <boost/smart_ptr/shared_ptr.hpp>
 #include <image_transport/subscriber.h>
-#include <naoqi_msgs/JointTrajectoryGoal.h>
+#include <naoqi_bridge_msgs/JointTrajectoryGoal.h>
 #include <ros/callback_queue.h>
 #include <ros/console.h>
 #include <ros/duration.h>
@@ -26,6 +26,7 @@
 #include <sensor_msgs/CameraInfo.h>
 #include <sensor_msgs/Image.h>
 #include <sensor_msgs/JointState.h>
+#include <std_msgs/String.h>
 #include <std_msgs/Header.h>
 #include <unistd.h>
 #include <cmath>
@@ -35,6 +36,8 @@
 #include <iostream>
 #include <cv_bridge/cv_bridge.h>
 #include <sensor_msgs/image_encodings.h>
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -65,7 +68,7 @@ DataCapture::DataCapture(CalibrationContext& context) :
     */
 
 
-
+	myfile.open ("/home/kurt/catkin_ws/result_camera.txt");
 	// subscribe the joint states topic
 	ros::SubscribeOptions jointStatesOps = ros::SubscribeOptions::create<
 			sensor_msgs::JointState>("/joint_states", 1,
@@ -74,11 +77,13 @@ DataCapture::DataCapture(CalibrationContext& context) :
 	jointStateSub = nh.subscribe(jointStatesOps);
 
 	// subscribe the image topic
-    imageSub = it.subscribe("nao_camera/image_raw", 1, &DataCapture::imageCallback, this);
+    imageSub = it.subscribe("camera/image_raw", 1, &DataCapture::imageCallback, this);
 
 	// advertise the measurement data topic
 	measurementPub = nh.advertise<measurementData>(
 			"/kinematic_calibration/measurement_data", 100);
+        resultPub = nh.advertise<std_msgs::String>(
+			"/kinematic_calibration/result_data", 100);
 
     captureVisPub = it.advertise("/kinematic_calibration/image", 1);
 
@@ -120,20 +125,23 @@ void DataCapture::retrieveParamsForChain(const std::string & chainName)
 
     // get public parameters
     //nhPrivate.getParam(chainName + "/chain_name",   this->chainName);
+
+
+
+
+//here is imoportantttt
     nhPrivate.getParam(chainName + "/marker_type", markerType);
 
     // get the marker detection instance
     markerContext = context.getMarkerContext(markerType);
     markerDetection = markerContext->getMarkerDetectionInstance();
 
+    int aruco_id;
+    nhPrivate.getParam(chainName + "/aruco_id", aruco_id);
+    ROS_INFO("%d\n", aruco_id);
+    markerDetection->setMarkerId(aruco_id);
 
-}
 
-const vector<string> &DataCapture::getJointNames()
-{
-    vector<string> tmp;
-    cerr << "This is a bug. This function is pure virtual " << endl;
-    return tmp;
 }
 
 DataCapture::~DataCapture() {
@@ -178,11 +186,11 @@ void DataCapture::setStiffness(const vector<string>& jointNames,
 		point.positions.push_back(stiffness);
 	}
 
-    naoqi_msgs::JointTrajectoryGoal goal;
+    naoqi_bridge_msgs::JointTrajectoryGoal goal;
 	goal.trajectory.joint_names = jointNames;
 	goal.trajectory.points.push_back(point);
 
-    naoqi_msgs::JointTrajectoryActionResultConstPtr result;
+    naoqi_bridge_msgs::JointTrajectoryActionResultConstPtr result;
 	stiffnessClient.sendGoal(goal);
 	stiffnessClient.waitForResult();
 }
@@ -280,7 +288,7 @@ bool DataCapture::capturePose(const std::string & poseName, double x_exp, double
         enableHeadStiffness();
     }
 
-    naoqi_msgs::BodyPoseGoal goal;
+    naoqi_bridge_msgs::BodyPoseGoal goal;
     goal.pose_name = poseName;
     this->currentPoseName = poseName;
     ROS_INFO("Calling pose manager to adopt pose %s...",
@@ -425,6 +433,7 @@ void DataCapture::publishMeasurementLoop() {
         publishMeasurement("manual-000");
         r.sleep();
 	}
+
 }
 
 void DataCapture::moveMarkerToImageRegion(Region region) {
@@ -540,6 +549,7 @@ void DataCapture::imageCallback(const sensor_msgs::ImageConstPtr& msg) {
 	receivedImage = true;
 	cameraFrame = msg.get()->header.frame_id;
 	markerFound = markerDetection->detect(msg, markerData);
+	//markerpoint.x=markerData[0];markerpoint.y=markerData[1];
 	image = *msg;
 	if (markerFound) {
 		ROS_INFO("Marker found at position %f %f", markerData[0],
@@ -733,7 +743,7 @@ void DataCapture::setHeadPose(double headYaw, double headPitch, bool relative,
 	point.positions.push_back(headPitch);
 	point.positions.insert(point.positions.end(), additionalPositions.begin(),
 			additionalPositions.end());
-    naoqi_msgs::JointTrajectoryGoal goal;
+    naoqi_bridge_msgs::JointTrajectoryGoal goal;
 	goal.trajectory.joint_names = headJointNames;
 	goal.trajectory.joint_names.insert(goal.trajectory.joint_names.end(),
 			additionalJoints.begin(), additionalJoints.end());
@@ -755,14 +765,14 @@ void DataCapture::moveArmDown() {
 		point.positions.push_back(0.128814);
 		point.positions.push_back(0.0104001);
 	}	
-	naoqi_msgs::JointTrajectoryGoal goal;
+	naoqi_bridge_msgs::JointTrajectoryGoal goal;
 	goal.trajectory.joint_names = jointNames;
 	goal.trajectory.points.push_back(point);
 	goal.relative = true;
 	trajectoryClient.sendGoal(goal);
 	trajectoryClient.waitForResult();*/
 
-    naoqi_msgs::JointTrajectoryGoal goal;
+    naoqi_bridge_msgs::JointTrajectoryGoal goal;
     goal.relative = false;
     goal.trajectory.joint_names.push_back("LElbowRoll");
     goal.trajectory.joint_names.push_back("LElbowYaw");
@@ -820,12 +830,14 @@ bool DataCapture::getMeasurementData(const std::string & poseName, measurementDa
     data.id = ss.str();
     data.camera_frame = this->cameraFrame;
     data.chain_name = chainName;
+    
     nh.getParam(chainName + "/chain_root", data.chain_root);
     nh.getParam(chainName + "/chain_tip", data.chain_tip);
     nh.getParam(chainName + "/marker_frame", data.marker_frame);
     data.marker_type = this->markerType;
     data.header.stamp = this->curTime;
     data.image = this->image;
+
     return true;
 }
 
@@ -840,6 +852,13 @@ void DataCapture::publishMeasurement(const measurementData & data) {
     // save the image to disk
     ss << ".jpg";
     string filename = ss.str();
+
+std_msgs::String msg;
+std::stringstream ss2;
+ ss2<< boost::lexical_cast<std::string>(markerData[0]) << " " <<boost::lexical_cast<std::string>(markerData[1]);
+ msg.data = ss2.str();
+    resultPub.publish(msg);
+
     ROS_INFO("Saving image to file %s%s.", "/tmp/", filename.c_str());
     this->markerDetection->writeImage("/tmp/" + filename);
 }
@@ -1011,7 +1030,7 @@ bool GeneralDataCapture::observe( Capture::Request & req, Capture::Response & re
     ROS_INFO("Got a request");
     retrieveParamsForChain(req.chainName);
     setJointNames(req.jointNames);
-    imageSub = it.subscribe("nao_camera/image_raw", 1, &GeneralDataCapture::imageCallback, this);
+    imageSub = it.subscribe("camera/image_raw", 1, &GeneralDataCapture::imageCallback, this);
     measurementData meas;
     enableStiffnesses();
     if (!capturePose(req.poseName,0,0,meas))
@@ -1025,3 +1044,4 @@ bool GeneralDataCapture::observe( Capture::Request & req, Capture::Response & re
 }
 
 } /* namespace kinematic_calibration */
+

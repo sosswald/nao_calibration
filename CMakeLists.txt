@@ -4,7 +4,7 @@ project(kinematic_calibration)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED roscpp cv_bridge image_transport urdf kdl_parser tf tf_conversions naoqi_msgs actionlib image_geometry message_generation eigen_conversions camera_calibration_parsers moveit_core moveit_ros_planning hrl_kinematics rosbag ar_sys)
+find_package(catkin REQUIRED roscpp cv_bridge image_transport urdf kdl_parser tf tf_conversions naoqi_bridge_msgs actionlib image_geometry message_generation eigen_conversions camera_calibration_parsers moveit_core moveit_ros_planning hrl_kinematics rosbag ar_sys)
 find_package(orocos_kdl REQUIRED)
 find_package(OpenCV REQUIRED)
 
@@ -350,6 +350,7 @@ target_link_libraries(poseSamplingMain poseSampling)
 ### OnlineCalibration
 add_executable(onlineCalibration 
    #src/calibration/CalibrationFramework.cpp
+	src/optimization/OptimizationNode.cpp
         src/calibration/OnlineCalibration.cpp
         )
 
@@ -504,8 +505,46 @@ add_executable(updateNode
 	src/result_publishing/UrdfUpdate.cpp	
 	src/result_publishing/JointUpdate.cpp
 	)
+
 add_dependencies(updateNode ${PROJECT_NAME}_generate_messages_cpp)
 target_link_libraries(updateNode modelLoader ${catkin_LIBRARIES})
+
+add_executable(result 
+	src/result_publishing/Result.cpp 
+	)
+
+target_link_libraries(result modelLoader ${OpenCV_LIBS} ${catkin_LIBRARIES})
+
+
+add_executable(tf_broadcaster 
+	src/result_publishing/tf_broadcaster.cpp 
+	)
+target_link_libraries(tf_broadcaster modelLoader ${catkin_LIBRARIES})
+
+add_executable(tf_listener 
+	src/result_publishing/tf_listener.cpp 
+	)
+target_link_libraries(tf_listener modelLoader ${catkin_LIBRARIES})
+
+
+add_executable(draw_frames src/result_publishing/draw_frames.cpp   )
+add_dependencies(draw_frames ${PROJECT_NAME}_generate_messages_cpp)
+target_link_libraries(draw_frames modelLoader ${catkin_LIBRARIES})
+#add_executable(optimizationNode 
+#	src/optimization/OptimizationNode.cpp
+#	src/optimization/OptimizationInterface.cpp
+#	src/common/FrameImageConverter.cpp
+#	src/optimization/CameraIntrinsicsVertex.cpp 
+#	src/optimization/G2oJointOffsetOptimization.cpp
+#	src/common/CalibrationContext.cpp	
+#	src/optimization/LocOptJointOffsetOptimization.cpp
+#	src/common/MeasurementPose.cpp
+#	)
+#target_link_libraries(optimizationNode kinematicChain ${catkin_LIBRARIES} ${G2O_LIBS} validationNodeLib)
+  
+
+
+
 
 catkin_add_gtest(jointUpdateTest test/JointUpdateTest.cpp src/result_publishing/JointUpdate.cpp WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/test)
 target_link_libraries(jointUpdateTest modelLoader ${catkin_LIBRARIES})

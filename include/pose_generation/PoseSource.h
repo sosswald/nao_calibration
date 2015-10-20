@@ -90,7 +90,7 @@ public:
     bool addPose(const std::string & id, const sensor_msgs::JointState & jsp) {
         if (pool.count(id) > 0)
             return false;
-        pool[id] = jsp;
+        pool[id] = jsp; std::cout<<" yes "<<std::endl;
         return true;
     }
     bool getById(const std::string & id, sensor_msgs::JointState & js){

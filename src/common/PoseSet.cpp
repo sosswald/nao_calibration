@@ -159,6 +159,7 @@ vector<boost::shared_ptr<MeasurementPoseSet> > MeasurementPoseSet::addPose() con
         std::set<PoolKeyType> newPoses = activePoses;
         newPoses.insert(it->first);
 
+//		std::cout<< 
 		// create a new pose set instance
         successors.push_back(boost::shared_ptr<MeasurementPoseSet>(new MeasurementPoseSet(state, poseSet, newPoses, kinematicChainToIDs)));
 	}

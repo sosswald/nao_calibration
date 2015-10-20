@@ -47,19 +47,21 @@ namespace kinematic_calibration {
 
 OptimizationNode::OptimizationNode(CalibrationContext* context) : G2oOptimizationInterface(context),
          nhPrivate("~"), collectingData(false) {
+
 	measurementSubsriber = nh.subscribe(
 			"/kinematic_calibration/measurement_data", 1000,
 			&OptimizationNode::measurementCb, this);
-
-    /*
-	bool cam_from_file = false;
-	nhPrivate.param("camera_from_file",cam_from_file, cam_from_file);
+	//nhPrivate
+    
+	/*bool cam_from_file = false;
+	nhPrivate.param("init_camera_from_file",cam_from_file, cam_from_file);
+	std::cout<< "NABER"<<cam_from_file<<std::endl;
 	if (cam_from_file)
 	  initializeCameraFromFile();
 	else
 	  cameraInfoSubscriber = nh.subscribe("/nao_camera/camera_info", 1,
-			&OptimizationNode::camerainfoCallback, this);
-            */
+			&OptimizationNode::camerainfoCallback, this);*/
+            
 
 	resultPublisher = nh.advertise<kinematic_calibration::calibrationResult>(
 			"/kinematic_calibration/calibration_result", 1);
@@ -71,9 +73,12 @@ OptimizationNode::OptimizationNode(CalibrationContext* context) : G2oOptimizatio
 
 
 
-    ros::NodeHandle nh;
+  //  ros::NodeHandle nh;
     bool cam_from_file = false;
-    m_nhPrivate.param("camera_from_file",cam_from_file, cam_from_file);
+    nhPrivate.param("/onlineCalibration/init_camera_from_file", cam_from_file, cam_from_file);
+    std::cout<< cam_from_file<<std::endl;
+    nhPrivate.getParam("/onlineCalibration/init_camera_from_file", cam_from_file);
+    std::cout<< cam_from_file<<std::endl;
     if (cam_from_file && !initializeCameraFromFile())
     {
       ROS_ERROR("use_camera_file set but could not initialize from file");
@@ -84,8 +89,6 @@ OptimizationNode::OptimizationNode(CalibrationContext* context) : G2oOptimizatio
       cameraInfoSubscriber = nh.subscribe("/nao_camera/camera_info", 1,
             &OptimizationNode::camerainfoCallback, this);
     }
-
-
 
     bool use_bag = false;
     m_nhPrivate.param("use_bagfile", use_bag, use_bag);
@@ -107,7 +110,7 @@ OptimizationNode::OptimizationNode(CalibrationContext* context) : G2oOptimizatio
     else
     {
       measurementSubsriber = nh.subscribe("/kinematic_calibration/measurement_data", 3000, &OptimizationNode::measurementCb, this);
-      ROS_INFO("Waiting for data...");
+      ROS_INFO("Waiting for data...aaaa");
       collectData();
     }
 
@@ -116,8 +119,11 @@ OptimizationNode::OptimizationNode(CalibrationContext* context) : G2oOptimizatio
 
 OptimizationNode::~OptimizationNode() {
 	// nothing to do
-}
-
+}/*
+void OptimizazionNode::killHandler(){
+	//void OptimizationNode::measurementCb(const measurementDataConstPtr& msg) {
+	     ros::shutdown();
+}*/
 void OptimizationNode::startLoop() {
 	ROS_INFO("Waiting for data...");
 	collectData();
@@ -126,7 +132,7 @@ void OptimizationNode::startLoop() {
 	ROS_INFO("Publishing results...");
 	printPoints();
 	printResult();
-    //plotPointErrorHistogram();
+    plotPointErrorHistogram();
 	publishResults();
 }
 
@@ -491,9 +497,9 @@ bool OptimizationNode::startOptizationCallback(
 void OptimizationNode::removeIgnoredMeasurements() {
 	// get list of IDs to be ignored
 	XmlRpc::XmlRpcValue idList;
-	if (!nh.hasParam("ignore_measurements"))
+	if (!nh.hasParam("/onlineCalibration/ignore_measurements"))
 		return;
-	nh.getParam("ignore_measurements", idList);
+	nh.getParam("/onlineCalibration/ignore_measurements", idList);
 	ROS_ASSERT(idList.getType() == XmlRpc::XmlRpcValue::TypeArray);
 
 	// create new list for measurement data
@@ -551,7 +557,7 @@ private:
 } /* namespace kinematic_calibration */
 
 using namespace kinematic_calibration;
-
+/*
 int main(int argc, char** argv) {
 	ros::init(argc, argv, "OptimizationNode");
 	RosCalibContext context;
@@ -560,4 +566,4 @@ int main(int argc, char** argv) {
 	while (ros::ok())
 		;
 	return 0;
-}
+}*/

@@ -1,28 +1,45 @@
 <launch>
    <env name="PYTHONPATH" value="$(env PYTHONPATH)" /> 
-   <arg name="robot_name" default="wall-e" />
-   <arg name="nao_ip" default="$(optenv NAO_IP 192.168.1.132)" />
-   <arg name="nao_port" default="$(optenv NAO_PORT 9559)" />
+   <arg name="robot_name" default="glados" />
+   <arg name="nao_ip"  />
+   <arg name="nao_port" />
+   <arg name="larm_file_general"  />
+   <arg name="larm_file_capturing"  />
+   <arg name="larm_bool"  />
+   <arg name="rarm_file_general"  />
+   <arg name="rarm_file_capturing"  />
+   <arg name="rarm_bool"  />
+   <arg name="lleg_file_general"  />
+   <arg name="lleg_file_capturing"  />
+   <arg name="lleg_bool"  />
+   <arg name="rleg_file_general"  />
+   <arg name="rleg_file_capturing"  />
+   <arg name="rleg_bool"  />
+
 
    <!--
    <include file="$(find kinematic_calibration)/launch/data_capturing.launch" >
-      <arg name="chain_name" value="larm" />
+      <arg name="chain_name" value="lleg" />  #"larm"
       <arg name="robot_ip" value="$(arg nao_ip)" />
       <arg name="manual" value="false" />
    </include>
 -->
 
+
    <node name="onlineCalibration" pkg="kinematic_calibration" type="onlineCalibration" output="screen" required="True">
       <rosparam file="$(find kinematic_calibration)/config/nao_calibration.yaml" />
-      <rosparam ns="rarm" file="$(find kinematic_calibration)/config/params_rarm_general.yaml" />
-      <rosparam ns="larm" file="$(find kinematic_calibration)/config/params_larm_general.yaml" />
-      <rosparam ns="rarm" file="$(find kinematic_calibration)/config/params_rarm_capturing.yaml" />
-      <rosparam ns="larm" file="$(find kinematic_calibration)/config/params_larm_capturing.yaml" />
+      <rosparam if="$(arg larm_bool)" ns="larm" file="$(arg larm_file_general)" />
+      <rosparam if="$(arg larm_bool)" ns="larm" file="$(arg larm_file_capturing)" />
+      <rosparam if="$(arg rarm_bool)" ns="rarm" file="$(arg rarm_file_general)" />
+      <rosparam if="$(arg rarm_bool)" ns="rarm" file="$(arg rarm_file_capturing)" />
+      <rosparam if="$(arg lleg_bool)" ns="lleg" file="$(arg lleg_file_general)" />
+      <rosparam if="$(arg lleg_bool)" ns="lleg" file="$(arg lleg_file_capturing)" />
+      <rosparam if="$(arg rleg_bool)" ns="rleg" file="$(arg rleg_file_general)" />
+      <rosparam if="$(arg rleg_bool)" ns="rleg" file="$(arg rleg_file_capturing)" />
       <param name="find_marker" type="bool" value="True" />
       <param name="move_marker_to_corners" type="bool" value="False" />
       <remap from="camera_info" to="/camera/camera_info" />
       <remap from="nao_camera" to="camera" />
-
    </node>
 
    <!--

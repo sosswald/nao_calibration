@@ -6,6 +6,7 @@
 #include <common/Observation.h>
 #include <pose_generation/MeasurementMsgPoseSource.h>
 #include <boost/shared_ptr.hpp>
+#include <yaml-cpp/yaml.h>
 
 using namespace ros;
 using namespace std;
@@ -22,7 +23,8 @@ public:
     virtual ~ValidationPoseSource();
 
     void addPosesFromBagFile(const std::vector<std::string> & filenames );
-
+    void addPosesFromYaml(const std::vector<std::string> & filenames,std::string projectdirectory);
+    void addPosesFromYaml(const std::string & filename,std::string projectdirectory);
     void setCurrentValidationPartition(unsigned int validationPartition);
 
     // fills the poses for the current split and the provided chain

@@ -20,7 +20,7 @@ using namespace std;
 
 ValidationOfflineCalibration::ValidationOfflineCalibration() : m_splitID(1)
 {
-    m_nhPrivate.param("num_of_splits", m_num_of_splits, m_num_of_splits);
+    m_nhPrivate.param("/onlineCalibration/num_of_splits", m_num_of_splits, m_num_of_splits);
     this->initialize();
     ROS_INFO("New ValidationOfflineCalibration created");
 
@@ -30,13 +30,17 @@ ValidationOfflineCalibration::ValidationOfflineCalibration() : m_splitID(1)
 void ValidationOfflineCalibration::initPoseSource()
 {
     std::vector<string> filepaths;
-    m_nhPrivate.getParam("pose_files", filepaths);
+    m_nhPrivate.getParam("/onlineCalibration/pose_files", filepaths);
+    std::string projectdirectory; ROS_INFO("MMMMMMMMMMM");
+    m_nhPrivate.getParam("/onlineCalibration/project_directory", projectdirectory);
     if (filepaths.empty())
     {
         ROS_ERROR("You need to specify at least one filepath for the poses");
     }
     m_poseSource.reset(new ValidationPoseSource(m_num_of_splits, m_nhPrivate, true));
-    m_poseSource->addPosesFromBagFile(filepaths);
+	 m_poseSource->addPosesFromYaml(filepaths, projectdirectory);
+
+    //m_poseSource->addPosesFromBagFile(projectdirectory+filepaths);
 }
 
 
@@ -50,8 +54,8 @@ void ValidationOfflineCalibration::validate()
 {
 
     std::string filePrefix, dirPrefix;
-    m_nhPrivate.getParam("file_prefix", filePrefix);
-    m_nhPrivate.getParam("directory_prefix", dirPrefix);
+    m_nhPrivate.getParam("/onlineCalibration/file_prefix", filePrefix);
+    m_nhPrivate.getParam("/onlineCalibration/directory_prefix", dirPrefix);
 
 
     for (int i = 1; i <= m_num_of_splits; i++)
@@ -269,12 +273,12 @@ bool ValidationOfflineCalibration::optimize()
 
     // prepare file system for output
     std::string file_prefix;
-    m_nhPrivate.getParam("file_prefix", file_prefix);
+    m_nhPrivate.getParam("/onlineCalibration/file_prefix", file_prefix);
     string splitstr = boost::lexical_cast<string>(m_splitID);
 
-    //validationNode->folderName = "/home/maierd/kin_calib_experiments/results/" + file_prefix + "/all_except_" + splitstr + "/" + file_prefix + "_" + boost::lexical_cast<string>(m_optimizationNode.getOptimizationData().size());
+    //validationNode->folderName = "/home/kurt/kin_calib_experiments/results/" + file_prefix + "/all_except_" + splitstr + "/" + file_prefix + "_" + boost::lexical_cast<string>(m_optimizationNode.getOptimizationData().size());
 
-    validationNode->folderName = "/home/maierd/kin_calib_experiments/results/" + file_prefix + "/all_except_" + splitstr + "/" + file_prefix + "_" + boost::lexical_cast<string>(m_resultSet->getNumberOfPoses()) ;
+    validationNode->folderName = "/home/kurt/kin_calib_experiments/results/" + file_prefix + "/all_except_" + splitstr + "/" + file_prefix + "_" + boost::lexical_cast<string>(m_resultSet->getNumberOfPoses()) ;
     cout << "\nWriting to " << validationNode->folderName << endl;
     boost::filesystem::path dirpath(validationNode->folderName);
     try

@@ -39,7 +39,9 @@ public:
 	 * @return true if success otherwise false;
 	 */
 	virtual bool writeImage(const string& filename);
-
+    virtual void setMarkerId(const int& markerId);
+	  int markerId;
+	//virtual bool setChain(const string& chainName);
 protected:
 	/**
 	 * Draws the detected marker into the image.

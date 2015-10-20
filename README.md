@@ -1,3 +1,7 @@
+Helloo!I will edit this file with more details.
+
+
+
 #Kinematic Calibration
 
 ## General
@@ -82,8 +86,6 @@ roslaunch kinematic_calibration calibrate_nao.launch
 ```
 
 calibrate_nao calibrates both arms of the robot. Start with that. To include the legs, adjust the launch file accordingly, as well as the config file (nao_calibration.yaml)
-If you want to calibrate legs too, first of all change corresponding launch files and change the following lines in FilePoseSource.cpp under src folder:
-string stampStr = key.substr(8); to string stampStr = key.substr(6);
 
 
 ## After calibration:

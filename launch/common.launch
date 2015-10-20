@@ -1,0 +1,84 @@
+<launch>
+   <env name="PYTHONPATH" value="$(env PYTHONPATH)" /> 
+   <arg name="nao_ip_common" value="$(optenv NAO_IP glados.local)"  />
+   <arg name="nao_port_common" value="$(optenv NAO_PORT 9559)" />
+   <arg name="project_directory" value="/home/kurt/catkin_ws/src/nao_calibration-master/" />
+   <!--arg name="pose_file_for_nao_basic_launch" value="['config/poses_lleg.yaml']" /-->
+   <!--arg name="pose_file" value="['config/poses_lleg.yaml']" /-->
+
+   <arg name="use_nao_basic" default="true"/>
+   <arg name="use_updateNode" default="true"/>
+   <arg name="use_dataCaptureService" default="true"/>
+   <arg name="use_calibrate_nao" default="true"/>
+
+
+   <arg name="larm_file_c" value="$(find kinematic_calibration)/config/poses_larm_750.yaml" />
+   <arg name="larm_file_general" value="$(find kinematic_calibration)/config/params_larm_general.yaml" />
+   <arg name="larm_file_capturing" value="$(find kinematic_calibration)/config/params_larm_capturing.yaml" />
+   <arg name="larm_bool_c" value="false" />
+
+   <arg name="rarm_file_c" value="$(find kinematic_calibration)/config/poses_rarm_750.yaml" />
+   <arg name="rarm_file_general" value="$(find kinematic_calibration)/config/params_rarm_general.yaml" />
+   <arg name="rarm_file_capturing" value="$(find kinematic_calibration)/config/params_rarm_capturing.yaml" />
+   <arg name="rarm_bool_c" value="false" />
+
+   <arg name="lleg_file_c" value="$(find kinematic_calibration)/config/poses_lleg.yaml" />
+   <arg name="lleg_file_general" value="$(find kinematic_calibration)/config/params_lleg_general.yaml" />
+   <arg name="lleg_file_capturing" value="$(find kinematic_calibration)/config/params_lleg_capturing.yaml" />
+   <arg name="lleg_bool_c" value="true" />
+
+   <arg name="rleg_file_c" value="$(find kinematic_calibration)/config/poses_rleg.yaml" />
+   <arg name="rleg_file_general" value="$(find kinematic_calibration)/config/params_rleg_general.yaml" />
+   <arg name="rleg_file_capturing" value="$(find kinematic_calibration)/config/params_rleg_capturing.yaml" />
+   <arg name="rleg_bool_c" value="false" />
+
+
+
+   <group>
+	   <include if="$(arg use_nao_basic)" file="$(find kinematic_calibration)/launch/nao_basic.launch" >
+	      <arg name="nao_ip" value="$(arg nao_ip_common)" />
+	      <arg name="nao_port" value="$(arg nao_port_common)" />
+	      <arg name="larm_file" value="$(arg larm_file_c)" />
+	      <arg name="larm_bool" value="$(arg larm_bool_c)" />
+	      <arg name="rarm_file" value="$(arg rarm_file_c)" />
+	      <arg name="rarm_bool" value="$(arg rarm_bool_c)" />
+	      <arg name="lleg_file" value="$(arg lleg_file_c)" />
+	      <arg name="lleg_bool" value="$(arg lleg_bool_c)" />
+	      <arg name="rleg_file" value="$(arg rleg_file_c)" />
+	      <arg name="rleg_bool" value="$(arg rleg_bool_c)" />
+	   </include>
+   </group>
+
+   <group>
+   <node if="$(arg use_updateNode)" pkg="kinematic_calibration" type="updateNode" name="updateNode" output="screen"/>
+   </group>	
+
+<group>
+   <include if="$(arg use_dataCaptureService)" file="$(find kinematic_calibration)/launch/dataCaptureService.launch"/>
+  </group>
+
+<group>
+   <include if="$(arg use_calibrate_nao)" file="$(find kinematic_calibration)/launch/calibrate_nao.launch">
+      <arg name="nao_ip" value="$(arg nao_ip_common)" />
+      <arg name="nao_port" value="$(arg nao_port_common)" />
+
+      <arg name="larm_file_general" value="$(arg larm_file_general)" />
+      <arg name="larm_file_capturing" value="$(arg larm_file_capturing)" />
+      <arg name="larm_bool" value="$(arg larm_bool_c)" />
+
+      <arg name="rarm_file_general" value="$(arg rarm_file_general)" />
+      <arg name="rarm_file_capturing" value="$(arg rarm_file_capturing)" />
+      <arg name="rarm_bool" value="$(arg rarm_bool_c)" />
+
+      <arg name="lleg_file_general" value="$(arg lleg_file_general)" />
+      <arg name="lleg_file_capturing" value="$(arg lleg_file_capturing)" />
+      <arg name="lleg_bool" value="$(arg lleg_bool_c)" />
+
+      <arg name="rleg_file_general" value="$(arg rleg_file_general)" />
+      <arg name="rleg_file_capturing" value="$(arg rleg_file_capturing)" />
+      <arg name="rleg_bool" value="$(arg rleg_bool_c)" />
+
+   </include>
+</group>
+
+</launch>

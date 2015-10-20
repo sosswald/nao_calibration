@@ -3,7 +3,7 @@
 # - false: initial parameters are used and written back, but not modified 
 calibrate_joint_offsets: true
 calibrate_camera_transform: false
-calibrate_camera_intrinsics: true
+calibrate_camera_intrinsics: false
 calibrate_marker_transform: true
 
 # Note 1: setting the following to 'true' automatically 

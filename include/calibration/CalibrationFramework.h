@@ -13,7 +13,7 @@
 #include <map>
 #include <string>
 #include <vector>
-
+#include <optimization/OptimizationNode.h>
 #include <boost/smart_ptr/shared_ptr.hpp>
 #include <ros/ros.h>
 #include <image_geometry/pinhole_camera_model.h>
@@ -123,7 +123,7 @@ protected:
     std::map<std::string, KinematicChainType > m_kinematicChains ; ///< the kinematic chains
     boost::shared_ptr<CalibrationState> m_initialState; ///<  needed in order to (re)-initialize the m_resultSet
     boost::shared_ptr<G2oOptimizationInterface> m_optimizationInterface; ///< interface to an optimizer
-
+//   boost::shared_ptr<OptimizationNode> m_opNode;
     ModelLoader m_modelLoader; ///< load a robot model from ROS parameter server
     ros::Subscriber m_cameraInfoSubscriber; ///<  subscriber for camera images
     image_geometry::PinholeCameraModel m_cameraModel; ///<  the camera model used to set the CalibrationState m_initialState

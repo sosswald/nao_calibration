@@ -21,7 +21,7 @@ class SinglePointMarkerDetection : public MarkerDetection {
 public:
 	SinglePointMarkerDetection();
 	virtual ~SinglePointMarkerDetection();
-
+	//virtual void setMarkerId(const int& markerId);
 protected:
 	/**
 	 * Draws the detected marker into the image.

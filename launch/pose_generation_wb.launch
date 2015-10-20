@@ -1,7 +1,6 @@
 <launch>
    <!-- TODO: Add parameter
-  <arg name="chain_names" default="[larm, rarm]"/>
--->
+  <arg name="chain_names" default="[lleg]/> #, rarm]"/>#, lleg, rleg]"/> -->
   <arg name="criterion" default="NAI" />
   <arg name="num_of_splits" default="3" />
   <arg name="num_of_poses" default="25" />
@@ -12,13 +11,15 @@
   <param name="/robot_description_semantic" textfile="$(find kinematic_calibration)/config/nao.srdf" type="str"/>
   <rosparam ns="/">
      ### chain_names is  a list
-     chain_names: [larm]
-     #chain_name: larm
-     ignore_joints: [HeadPitch, LWristYaw, RWristYaw, RHipPitchYaw]
+    #chain_names: [lleg]
+     chain_name: lleg
+     ignore_joints: [HeadPitch, LWristYaw, RWristYaw}#, LAnkleRoll]# RHipPitchYaw]
   </rosparam>
   <!-- TODO: Add other limbs -->
-  <rosparam ns="larm" file="$(find kinematic_calibration)/config/params_larm_general.yaml" command="load"/>
-  <rosparam ns="rarm" file="$(find kinematic_calibration)/config/params_rarm_general.yaml" command="load"/>
+  #<rosparam ns="larm" file="$(find kinematic_calibration)/config/params_larm_general.yaml" command="load"/>
+  #<rosparam ns="rarm" file="$(find kinematic_calibration)/config/params_rarm_general.yaml" command="load"/>
+  <!--rosparam ns="lleg" file="$(find kinematic_calibration)/config/params_lleg_general.yaml" command="load"/-->
+  <rosparam ns="lleg" file="$(find kinematic_calibration)/config/params_lleg_general.yaml" command="load"/>
   <node pkg="kinematic_calibration" type="validationPoseSelectionNode" name="poseSelectionNode4" output="screen">
      <param name="use_bagfile" value="true" />
     <rosparam>
