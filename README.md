@@ -75,18 +75,22 @@ Also, these topics need to be published:
 
 
 ### Running the actual calibration:
-Different from Maier's code, here we have a common launch file named "common.launch", where you can run all the launch files from here. The purpose of collecting them in one file was that,  there are common args in different launch files- that can be edited several times e-g- in order to change which body part to calibrate. So, rather than opening and editing several files, you can fastly edit the args from this file and decide which launch files to be launched by changing the bool values:
 
+Different from Maier's code, here we have a common launch file named "common.launch", where you can run all the launch files from here. The purpose of collecting them in one file was that,  there are common args in different launch files- that can be edited several times e-g- in order to change which body part to calibrate. So, rather than opening and editing several files, you can fastly edit the args from this file and decide which launch files to be launched by changing the bool values:
+```
    <arg name="use_nao_basic" default="true"/>
    <arg name="use_updateNode" default="true"/>
    <arg name="use_dataCaptureService" default="true"/>
    <arg name="use_calibrate_nao" default="true"/>
+```
 
 You can again change boolean values to decide what to calibrate:
+```
    <arg name="larm_bool_c" value="false" />
    <arg name="rarm_bool_c" value="false" />
    <arg name="lleg_bool_c" value="true" />
    <arg name="rleg_bool_c" value="false" />
+```
 
 If you change any of these bools, pls also adjust the config file (nao_calibration.yaml)
 
