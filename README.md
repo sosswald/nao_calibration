@@ -1,7 +1,3 @@
-Helloo!I will edit this file with more details.
-
-
-
 #Kinematic Calibration
 
 ## General
@@ -48,8 +44,7 @@ The documention can be created with doxygen.
 
 ### Preparation
 First of all, the framework requires that the initial marker placement is approximately known from the ROS param server. So the urdf model needs to be adjusted accordingly. The same goes for the camera calibration. 
-The nao_description package (https://github.com/danielmaier/nao_description) simplifies this process as it is parameterized for this purpose and only the calibration_xxx.xacro files in the urdf directoy need to be updated. Note, this version is not the "official" nao_description package. It should be possible to merge the changes at one point. In general, the code has only been tested with the this nao_description package and not the official one which has different link and joint names. 
-
+There exists a nao_description package that Daniel Maier edited for nao_calibration package (https://github.com/danielmaier/nao_description). In order to simplify the process, there there exists a version of combined of both. You can simply use the combined version.
 
 Second, a list of possible poses is required. The poses should be such that the marker is visible in the image. Such a list can be created manually (cumbersome) or using an initial calibration and the poseSampling node. It might be necessary to make some modifications in order to run that node. An auto-generated sample list is contained in the config folder (e.g. poses_larm_750.yaml) for the marker placement as illustrated in the paper. So if your markers are approximately at the same position, it should work out of the box. 
 
@@ -64,7 +59,8 @@ For each kinematic chain, there is an additional config file params_$CHAINNAME_g
 
 ### Prerequisites:
 For convenience, the following launch file should bring up all the prerequisites that are needed for the calibration:
-`roslaunch kinematic_calibration nao_basic.launch`
+
+`nao_basic.launch`
 
 In details, the calibration software needs the robot description published to the parameter server (nao_description)
 
@@ -80,15 +76,25 @@ Also, these topics need to be published:
 
 ### Running the actual calibration:
 ```
-rosrun kinematic_calibration upateNode
-roslaunch kinematic_calibration dataCaptureService.launch
-roslaunch kinematic_calibration calibrate_nao.launch
+Different from Maier's code, here we have a common launch file named "common.launch", where you can run all the launch files from here. The purpose of collecting them in one file was that,  there are common args in different launch files- that can be edited several times e-g- in order to change which body part to calibrate. So, rather than opening and editing several files, you can fastly edit the args from this file and decide which launch files to be launched by changing the bool values:
+
+   <arg name="use_nao_basic" default="true"/>
+   <arg name="use_updateNode" default="true"/>
+   <arg name="use_dataCaptureService" default="true"/>
+   <arg name="use_calibrate_nao" default="true"/>
+
 ```
 
-calibrate_nao calibrates both arms of the robot. Start with that. To include the legs, adjust the launch file accordingly, as well as the config file (nao_calibration.yaml)
+You can again change boolean values to decide what to calibrate:
+   <arg name="larm_bool_c" value="false" />
+   <arg name="rarm_bool_c" value="false" />
+   <arg name="lleg_bool_c" value="true" />
+   <arg name="rleg_bool_c" value="false" />
+
+If you change any of these bools, pls also adjust the config file (nao_calibration.yaml)
 
 
 ## After calibration:
-The updateNode writes a set of files (as sepecified in the nao_calibration.yaml file) containing the camera calibration, an updated robot model and individual joint_offset, camera transform, and marker transform files.  The latter can be used in conjunction with the modified version of nao_description (https://github.com/danielmaier/nao_description).
+The updateNode writes a set of files (as sepecified in the nao_calibration.yaml file) containing the camera calibration, an updated robot model and individual joint_offset, camera transform, and marker transform files.  The latter can be used in conjunction with the combined version of nao_description.
 
 
