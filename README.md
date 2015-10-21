@@ -98,4 +98,11 @@ If you change any of these bools, pls also adjust the config file (nao_calibrati
 ## After calibration:
 The updateNode writes a set of files (as sepecified in the nao_calibration.yaml file) containing the camera calibration, an updated robot model and individual joint_offset, camera transform, and marker transform files.  The latter can be used in conjunction with the combined version of nao_description.
 
+If you want to see how the calibrated version finds where the markers are, there exists a launch file:
+`draw.launch`
+
+It draws a red dot on where the marker is, calculated via calibrated joint data.
+
+
+
 
