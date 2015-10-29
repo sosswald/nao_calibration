@@ -76,7 +76,10 @@ Also, these topics need to be published:
 
 ### Running the actual calibration:
 
-Different from Maier's code, here we have a common launch file named "common.launch", where you can run all the launch files from here. The purpose of collecting them in one file was that,  there are common args in different launch files- that can be edited several times e-g- in order to change which body part to calibrate. So, rather than opening and editing several files, you can fastly edit the args from this file and decide which launch files to be launched by changing the bool values:
+
+Different from Maier's code, here we have a common launch file named "common.launch", where you can run all the launch files from here and we are running the camera node from the real Nao. So before everything, run roscore on terminal and ssh your robot. After that, export your computer from robot and start the camera node on your robot. 
+
+The purpose of collecting all launch files in one file was that,  there are common args in different launch files- that can be edited several times e-g- in order to change which body part to calibrate. So, rather than opening and editing several files, you can fastly edit the args from this file and decide which launch files to be launched by changing the bool values:
 ```
    <arg name="use_nao_basic" default="true"/>
    <arg name="use_updateNode" default="true"/>
